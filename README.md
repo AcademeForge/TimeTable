@@ -70,7 +70,7 @@ button:hover {
     display: none;
 } 
 <style>
-    <script src="script.js">let selectedClass = "";
+    let selectedClass = "";
 let selectedStream = "";
 
 function selectClass(classGroup) {
