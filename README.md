@@ -40,7 +40,10 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+
+
+</script>
+
 
 body {
     font-family: Arial, sans-serif;
@@ -54,7 +57,9 @@ body {
     max-width: 400px;
     margin: auto;
     padding: 20px;
-    background: #1e1e1e;
+    background:</script>
+
+    #1e1e1e;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
 }
@@ -92,7 +97,7 @@ td, th {
     padding: 10px;
     border: 1px solid white;
 }
-
+</script>
 let selectedClass = "";
 let selectedStream = "";
 let selectedMode = "";
