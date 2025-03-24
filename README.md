@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timetable - AcademeForge</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Student Timetable</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Select Your Class</h1>
-        <div id="class-selection">
+        <div class="class-selection">
             <button onclick="selectClass('1-2')">Class 1 & 2</button>
             <button onclick="selectClass('3-4')">Class 3 & 4</button>
             <button onclick="selectClass('5-6')">Class 5 & 6</button>
@@ -19,152 +19,109 @@
         </div>
 
         <div id="stream-selection" class="hidden">
-            <h2>Select Your Stream (Only for Class 11 & 12)</h2>
-            <button onclick="selectStream('Science')">Science</button>
-            <button onclick="selectStream('Commerce')">Commerce</button>
-            <button onclick="selectStream('Arts')">Arts</button>
+            <h2>Select Stream (Only for Class 11 & 12)</h2>
+            <button onclick="selectStream('science')">Science</button>
+            <button onclick="selectStream('commerce')">Commerce</button>
+            <button onclick="selectStream('arts')">Arts</button>
         </div>
 
-        <div id="timetable-options" class="hidden">
-            <h2>Choose Your Study Mode</h2>
-            <button onclick="showTimetable('regular')">Regular</button>
-            <button onclick="showTimetable('dummy')">Dummy</button>
+        <div id="timetable-type" class="hidden">
+            <h2>Regular or Dummy?</h2>
+            <button onclick="generateTimetable('regular')">Regular</button>
+            <button onclick="generateTimetable('dummy')">Dummy</button>
         </div>
 
         <div id="timetable" class="hidden">
             <h2>Your Timetable</h2>
-            <table id="timetable-table"></table>
-            <button onclick="editTimetable()">Modify Timetable</button>
+            <p id="schedule"></p>
+            <button onclick="modifyTimetable()">Modify Timetable</button>
         </div>
     </div>
-
-    <script src="script.js"></script>
-</body>
-
-
-</script>
-
-
+<style>
 body {
-    font-family: Arial, sans-serif;
     background-color: #121212;
     color: white;
+    font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
     padding: 20px;
+}
+
+button {
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #333;
 }
 
 .container {
     max-width: 400px;
     margin: auto;
-    padding: 20px;
-    background:</script>
-
-    #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
-}
-
-h1, h2 {
-    font-weight: bold;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    background: #03dac6;
-    color: black;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #018786;
 }
 
 .hidden {
     display: none;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-td, th {
-    padding: 10px;
-    border: 1px solid white;
-}
-</script>
-let selectedClass = "";
+} 
+<style>
+    <script src="script.js">let selectedClass = "";
 let selectedStream = "";
-let selectedMode = "";
 
-function selectClass(cls) {
-    selectedClass = cls;
-    document.getElementById("class-selection").classList.add("hidden");
+function selectClass(classGroup) {
+    selectedClass = classGroup;
+    document.getElementById("stream-selection").classList.add("hidden");
+    document.getElementById("timetable-type").classList.remove("hidden");
 
-    if (cls === "11-12") {
+    if (classGroup === "11-12") {
         document.getElementById("stream-selection").classList.remove("hidden");
-    } else {
-        document.getElementById("timetable-options").classList.remove("hidden");
+        document.getElementById("timetable-type").classList.add("hidden");
     }
 }
 
 function selectStream(stream) {
     selectedStream = stream;
-    document.getElementById("stream-selection").classList.add("hidden");
-    document.getElementById("timetable-options").classList.remove("hidden");
+    document.getElementById("timetable-type").classList.remove("hidden");
 }
 
-function showTimetable(mode) {
-    selectedMode = mode;
-    document.getElementById("timetable-options").classList.add("hidden");
+function generateTimetable(type) {
+    let schedule = "";
+    
+    if (selectedClass === "1-2") {
+        schedule = type === "regular" ? "9 AM - English\n10 AM - Math\n11 AM - Play Time" : "10 AM - Fun Learning\n11 AM - Stories\n12 PM - Drawing";
+    } else if (selectedClass === "3-4") {
+        schedule = type === "regular" ? "9 AM - English\n10 AM - Math\n11 AM - Science" : "10 AM - Reading\n11 AM - Math Puzzles\n12 PM - Games";
+    } else if (selectedClass === "5-6") {
+        schedule = type === "regular" ? "9 AM - English\n10 AM - Math\n11 AM - Science\n12 PM - Social Studies" : "10 AM - Self Study\n11 AM - Math Practice\n12 PM - Science Experiments";
+    } else if (selectedClass === "7-8") {
+        schedule = type === "regular" ? "9 AM - Science\n10 AM - Math\n11 AM - English\n12 PM - Social Studies" : "10 AM - Science Projects\n11 AM - Online Learning\n12 PM - Physical Activities";
+    } else if (selectedClass === "9-10") {
+        schedule = type === "regular" ? "8 AM - Physics\n9 AM - Math\n10 AM - Chemistry\n11 AM - English" : "9 AM - Online Courses\n10 AM - Exam Prep\n11 AM - Revision";
+    } else if (selectedClass === "11-12") {
+        if (selectedStream === "science") {
+            schedule = type === "regular" ? "8 AM - Physics\n9 AM - Chemistry\n10 AM - Math\n11 AM - English" : "9 AM - JEE Prep\n10 AM - Self Study\n11 AM - Revision";
+        } else if (selectedStream === "commerce") {
+            schedule = type === "regular" ? "8 AM - Accounts\n9 AM - Business Studies\n10 AM - Economics\n11 AM - English" : "9 AM - Finance Learning\n10 AM - Case Studies\n11 AM - Stock Market Basics";
+        } else if (selectedStream === "arts") {
+            schedule = type === "regular" ? "8 AM - History\n9 AM - Political Science\n10 AM - Psychology\n11 AM - English" : "9 AM - Literature Studies\n10 AM - Research Work\n11 AM - Writing Practice";
+        }
+    }
+
+    document.getElementById("schedule").innerText = schedule;
     document.getElementById("timetable").classList.remove("hidden");
-    
-    const timetableTable = document.getElementById("timetable-table");
-    timetableTable.innerHTML = "";
-
-    let timetable = getTimetable(selectedClass, selectedStream, mode);
-    
-    for (let row of timetable) {
-        let tr = document.createElement("tr");
-        for (let cell of row) {
-            let td = document.createElement("td");
-            td.innerText = cell;
-            tr.appendChild(td);
-        }
-        timetableTable.appendChild(tr);
-    }
 }
 
-function getTimetable(cls, stream, mode) {
-    let defaultTimetable = {
-        "1-2": [["Time", "Subject"], ["9:00 AM", "Math"], ["10:00 AM", "English"]],
-        "3-4": [["Time", "Subject"], ["9:00 AM", "Science"], ["10:00 AM", "English"]],
-        "5-6": [["Time", "Subject"], ["9:00 AM", "Math"], ["10:00 AM", "Science"]],
-        "7-8": [["Time", "Subject"], ["9:00 AM", "Math"], ["10:00 AM", "Physics"]],
-        "9-10": [["Time", "Subject"], ["9:00 AM", "Math"], ["10:00 AM", "Science"]],
-        "11-12": {
-            "Science": [["Time", "Subject"], ["9:00 AM", "Physics"], ["10:00 AM", "Chemistry"]],
-            "Commerce": [["Time", "Subject"], ["9:00 AM", "Accounts"], ["10:00 AM", "Economics"]],
-            "Arts": [["Time", "Subject"], ["9:00 AM", "History"], ["10:00 AM", "Political Science"]]
-        }
-    };
-
-    let timetable = cls === "11-12" ? defaultTimetable[cls][stream] : defaultTimetable[cls];
-
-    if (mode === "dummy") {
-        timetable.push(["1:00 PM", "Self Study"]);
+function modifyTimetable() {
+    let newSchedule = prompt("Enter your modified timetable:");
+    if (newSchedule) {
+        document.getElementById("schedule").innerText = newSchedule;
     }
-
-    return timetable;
-}
-
-function editTimetable() {
-    alert("Feature Coming Soon!");
 }
 </script>
 
