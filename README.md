@@ -161,3 +161,7 @@ function getTimetable(cls, stream, mode) {
 function editTimetable() {
     alert("Feature Coming Soon!");
 }
+</script>
+
+</body>
+</html>
