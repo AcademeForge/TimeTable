@@ -51,8 +51,7 @@
     <footer>
         <p>&copy; 2025 AcademeForge. All rights reserved.</p>
     </footer>
-</body>
-</html>
+</script>
 
 <html lang="en">
 <head>
@@ -72,8 +71,7 @@
             <p>Not a member? <a href="[SPACE]">Sign Up</a></p>
         </form>
     </section>
-</body>
-</html>
+</script>
 
 <html lang="en">
 <head>
@@ -81,21 +79,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - AcademeForge</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+</script>
+
     <section class="about-page">
         <h2>About Us</h2>
         <p>[SPACE for your text]</p>
     </section>
-</body>
-</html><html lang="en">
+</script>
+
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - AcademeForge</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+</script>
+
     <section class="contact-page">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:AcademeForge@gmail.com">AcademeForge@gmail.com</a></p>
@@ -113,8 +112,7 @@
             <a href="[SPACE]" class="social-btn">Facebook</a>
         </div>
     </section>
-</body>
-</html>
+</script>
 
 <html lang="en">
 <head>
@@ -133,8 +131,7 @@
             <a href="stream-selection.html?class=12" class="btn">Class 12</a>
         </div>
     </section>
-</body>
-</html>
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -153,8 +150,7 @@
             <a href="notes.html?class=11&stream=arts" class="btn">Arts</a>
         </div>
     </section>
-</body>
-</html>
+</script>
 
 /* Reset */
 * {
@@ -283,6 +279,9 @@ footer {
     width: 100%;
 }
 
+</script>
+
 </body>
 </html>
+
 
