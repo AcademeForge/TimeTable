@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,14 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Banner -->
     <header>
         <div class="banner">
             <h1>Welcome to AcademeForge</h1>
         </div>
     </header>
 
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -23,7 +22,6 @@
         </ul>
     </nav>
 
-    <!-- Homepage Content -->
     <section class="homepage">
         <h2>Explore AcademeForge</h2>
         <div class="options">
@@ -31,28 +29,28 @@
             <a href="class-selection.html?type=lectures" class="btn">Watch Lectures</a>
             <div class="social-links">
                 <h3>Follow Us</h3>
-                <a href="[SPACE]" class="social-btn">Instagram</a>
-                <a href="[SPACE]" class="social-btn">Twitter</a>
-                <a href="[SPACE]" class="social-btn">Telegram</a>
-                <a href="[SPACE]" class="social-btn">YouTube</a>
-                <a href="[SPACE]" class="social-btn">Facebook</a>
+                <a href="#" class="social-btn">Instagram</a>
+                <a href="#" class="social-btn">Twitter</a>
+                <a href="#" class="social-btn">Telegram</a>
+                <a href="#" class="social-btn">YouTube</a>
+                <a href="#" class="social-btn">Facebook</a>
             </div>
             <a href="mailto:AcademeForge@gmail.com" class="btn">Send Us Your Query</a>
         </div>
     </section>
 
-    <!-- Chat Box -->
     <div class="chat-box">
         <p>Need Help? Chat with us!</p>
-        <!-- [SPACE for chat integration] -->
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 AcademeForge. All rights reserved.</p>
     </footer>
-</script>
+</body>
+</html>
 
+<!-- Login Page -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,34 +65,40 @@
             <input type="text" placeholder="Username or Email" required>
             <input type="password" placeholder="Password" required>
             <button type="submit">Login</button>
-            <p><a href="[SPACE]">Forgot Password?</a></p>
-            <p>Not a member? <a href="[SPACE]">Sign Up</a></p>
+            <p><a href="#">Forgot Password?</a></p>
+            <p>Not a member? <a href="#">Sign Up</a></p>
         </form>
     </section>
-</script>
+</body>
+</html>
 
+<!-- About Us Page -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - AcademeForge</title>
     <link rel="stylesheet" href="styles.css">
-</script>
-
+</head>
+<body>
     <section class="about-page">
         <h2>About Us</h2>
-        <p>[SPACE for your text]</p>
+        <p>Welcome to AcademeForge! We provide students with high-quality educational resources, including notes and lectures.</p>
     </section>
-</script>
+</body>
+</html>
 
+<!-- Contact Page -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - AcademeForge</title>
     <link rel="stylesheet" href="styles.css">
-</script>
-
+</head>
+<body>
     <section class="contact-page">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:AcademeForge@gmail.com">AcademeForge@gmail.com</a></p>
@@ -105,15 +109,18 @@
             <button type="submit">Submit</button>
         </form>
         <div class="social-links">
-            <a href="[SPACE]" class="social-btn">Instagram</a>
-            <a href="[SPACE]" class="social-btn">Twitter</a>
-            <a href="[SPACE]" class="social-btn">Telegram</a>
-            <a href="[SPACE]" class="social-btn">YouTube</a>
-            <a href="[SPACE]" class="social-btn">Facebook</a>
+            <a href="#" class="social-btn">Instagram</a>
+            <a href="#" class="social-btn">Twitter</a>
+            <a href="#" class="social-btn">Telegram</a>
+            <a href="#" class="social-btn">YouTube</a>
+            <a href="#" class="social-btn">Facebook</a>
         </div>
     </section>
-</script>
+</body>
+</html>
 
+<!-- Class Selection Page -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -131,8 +138,10 @@
             <a href="stream-selection.html?class=12" class="btn">Class 12</a>
         </div>
     </section>
-</script>
+</body>
+</html>
 
+<!-- Stream Selection Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,8 +159,11 @@
             <a href="notes.html?class=11&stream=arts" class="btn">Arts</a>
         </div>
     </section>
-</script>
+</body>
+</html>
 
+<!-- CSS Styles -->
+<style>
 /* Reset */
 * {
     margin: 0;
@@ -190,14 +202,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Homepage */
-.homepage {
-    text-align: center;
-    padding: 40px;
-}
-.options {
-    margin-top: 20px;
-}
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -205,17 +210,6 @@ nav ul li a {
     color: white;
     text-decoration: none;
     margin: 10px;
-    border-radius: 5px;
-}
-.social-links {
-    margin: 20px 0;
-}
-.social-btn {
-    background-color: #555;
-    padding: 8px 15px;
-    color: white;
-    text-decoration: none;
-    margin: 5px;
     border-radius: 5px;
 }
 
@@ -230,44 +224,6 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* Login Page */
-.login-page {
-    text-align: center;
-    padding: 50px;
-}
-.login-page form {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    margin: 0 auto;
-}
-.login-page input, .contact-page textarea {
-    margin: 10px 0;
-    padding: 8px;
-}
-.login-page button, .contact-page button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-/* About & Contact Pages */
-.about-page, .contact-page {
-    text-align: center;
-    padding: 50px;
-}
-
-/* Class & Stream Selection */
-.class-selection, .stream-selection {
-    text-align: center;
-    padding: 50px;
-}
-.class-options, .stream-options {
-    margin-top: 20px;
-}
-
 /* Footer */
 footer {
     text-align: center;
@@ -278,10 +234,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-</script>
-
-</body>
-</html>
-
-
+</style>
