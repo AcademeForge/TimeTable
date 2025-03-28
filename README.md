@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Top Banner -->
     <header>
         <div class="banner">
             <h1>Welcome to AcademeForge</h1>
         </div>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -22,6 +24,7 @@
         </ul>
     </nav>
 
+    <!-- Homepage Content -->
     <section class="homepage">
         <h2>Explore AcademeForge</h2>
         <div class="options">
@@ -39,10 +42,12 @@
         </div>
     </section>
 
+    <!-- Chat Box -->
     <div class="chat-box">
         <p>Need Help? Chat with us!</p>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 AcademeForge. All rights reserved.</p>
     </footer>
@@ -162,7 +167,7 @@
 </body>
 </html>
 
-<!-- CSS Styles -->
+<!-- Stylesheet (styles.css) -->
 <style>
 /* Reset */
 * {
@@ -202,7 +207,11 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Buttons */
+/* Homepage */
+.homepage {
+    text-align: center;
+    padding: 40px;
+}
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -210,6 +219,17 @@ nav ul li a {
     color: white;
     text-decoration: none;
     margin: 10px;
+    border-radius: 5px;
+}
+.social-links {
+    margin: 20px 0;
+}
+.social-btn {
+    background-color: #555;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
     border-radius: 5px;
 }
 
