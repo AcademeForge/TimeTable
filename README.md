@@ -215,5 +215,86 @@
             <p><strong>Price:</strong> ₹5,000</p>
         </div>
     </section>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AST - AcademeForge Scholars Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #8e44ad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .registration-form input, .registration-form textarea, .registration-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AcademeForge Scholars Test (AST)</h1>
+        <p>Your gateway to scholarships and academic recognition.</p>
+    </header>
+
+    <section>
+        <h2>About the AST</h2>
+        <p>The AcademeForge Scholars Test (AST) is designed to identify and reward academic excellence. Students from Classes 9 to 12 are eligible to participate.</p>
+        <p><strong>Eligibility:</strong> Students of Classes 9, 10, 11, and 12.</p>
+        <p><strong>Test Format:</strong> Multiple-choice questions in subjects including Mathematics, Science, and Logical Reasoning.</p>
+    </section>
+
+    <section>
+        <h2>Sample Questions</h2>
+        <p>Here are a few sample questions to help you prepare:</p>
+        <ul>
+            <li><strong>Mathematics:</strong> Solve for x: 2x + 5 = 15</li>
+            <li><strong>Science:</strong> What is the chemical formula for water?</li>
+            <li><strong>Logical Reasoning:</strong> Find the next number in the series: 2, 4, 8, 16, ...</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Scholarship Rewards</h2>
+        <p>Students scoring in the top 10 percentile will receive scholarships ranging from partial to full funding for AcademeForge courses.</p>
+    </section>
+
+    <section class="registration-form">
+        <h2>Register for AST</h2>
+        <form action="/submit-registration" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="class">Class:</label>
+            <input type="text" id="class" name="class" placeholder="Enter your current class (9, 10, 11, or 12)" required>
+
+            <label for="message">Message (Optional):</label>
+            <textarea id="message" name="message" placeholder="Any additional information"></textarea>
+
+            <button type="submit">Register Now</button>
+        </form>
+    </section>
 </body>
 </html>
