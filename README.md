@@ -296,5 +296,77 @@
             <button type="submit">Register Now</button>
         </form>
     </section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - AcademeForge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #1abc9c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .login-section, .dashboard {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .login-section input, .dashboard button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .dashboard ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .dashboard ul li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Portal</h1>
+        <p>Access your personalized dashboard and learning materials.</p>
+    </header>
+
+    <section class="login-section">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section class="dashboard">
+        <h2>Your Dashboard</h2>
+        <p>Welcome back, [Student Name]!</p>
+        <ul>
+            <li><strong>Progress Tracker:</strong> 70% of course completed</li>
+            <li><strong>Enrolled Courses:</strong> Mathematics, Physics</li>
+            <li><strong>Notes:</strong> Download your lecture notes here</li>
+            <li><strong>Test Results:</strong> Recent Test: 85%</li>
+        </ul>
+        <button>Access Courses</button>
+        <button>View Notes</button>
+    </section>
 </body>
 </html>
