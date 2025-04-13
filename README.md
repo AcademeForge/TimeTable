@@ -8,12 +8,13 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f8ff;
+      background: linear-gradient(to bottom right, #e0f7fa, #fce4ec);
       color: #222;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      overflow-x: hidden;
     }
     header {
       margin-top: 60px;
@@ -21,12 +22,14 @@
       font-weight: bold;
       color: #4b0082;
       text-align: center;
+      animation: fadeDown 1s ease-out;
     }
     .tagline {
       margin-top: 10px;
       font-size: 1.2rem;
       color: #555;
       text-align: center;
+      animation: fadeUp 1.2s ease-out;
     }
     .link-container {
       margin-top: 40px;
@@ -35,6 +38,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
+      animation: slideIn 1.3s ease-out;
     }
     a.button {
       text-align: center;
@@ -44,21 +48,69 @@
       text-decoration: none;
       border-radius: 10px;
       font-size: 1.1rem;
-      transition: transform 0.2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
     }
     a.button:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     }
     footer {
       margin-top: auto;
       padding: 20px;
       font-size: 0.9rem;
       color: #888;
-    }
+      text-align: center;
+      animation: fadeIn 1.5s ease-in;
+    }.mascot {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  animation: float 3s ease-in-out infinite;
+  z-index: 1000;
+}
+
+@keyframes fadeDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateX(-100px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
   </style>
 </head>
 <body>
-  <header>AcademeForge</header>
+  <audio autoplay loop hidden>
+    <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>  <header>AcademeForge</header>
   <div class="tagline">Empowering Students, Building Futures</div>
   <div class="link-container">
     <a class="button" href="http://academeforge.wordpress.com" target="_blank">WordPress Blog</a>
@@ -75,4 +127,5 @@
   <footer>
     Made with love by AcademeForge Team
   </footer>
+  <img class="mascot" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Mascot">
 </body>
