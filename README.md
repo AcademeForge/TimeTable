@@ -9,34 +9,31 @@
     label { display: block; margin: 10px 0 5px; }
     input, select, textarea { width: 100%; padding: 8px; }
     .conditional { display: none; }
-    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; }
+    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
   </style>
-  <script>
-    function toggleOfflineFields() {
-      const mode = document.getElementById("mode").value;
-      const offlineFields = document.querySelectorAll(".offline-only");
-      offlineFields.forEach(field => {
-        field.style.display = (mode === "Offline") ? "block" : "none";
-      });
-    }
-  </script>
 </head>
 <body>
 
   <h2>AcademeForge Scholars Test Registration</h2>
 
-  <form action="https://formsubmit.co/your@email.com" method="POST" enctype="multipart/form-data">
-    <!-- Redirect after submit (optional) -->
-    <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+  <form id="registrationForm">
+    <!-- Payment Info before screenshot -->
+    <label><strong>Step 1: Pay the Test Fee</strong></label>
+    <p>Pay <strong>₹50</strong> to UPI ID <strong>devrajkumar01@ybl</strong> using any UPI app (PhonePe, Google Pay, etc.).</p>
+    <p><strong>Note:</strong> After payment, upload the screenshot below.</p>
 
-    <!-- Disable captcha -->
-    <input type="hidden" name="_captcha" value="false">
+    <!-- UPI Pay Button -->
+    <a href="upi://pay?pa=devrajkumar01@ybl&pn=Devraj+Kumar&mc=0000&tid=1234567890&tr=1234567890&tn=Test+Payment&am=50&cu=INR" 
+       target="_blank">
+       <button type="button">Pay ₹50 Now</button>
+    </a>
 
+    <!-- Form Fields -->
     <label for="name">Full Name*</label>
-    <input type="text" id="name" name="Name" required>
+    <input type="text" id="name" name="name" required>
 
     <label for="class">Class*</label>
-    <select id="class" name="Class" required>
+    <select id="class" name="class" required>
       <option value="">Select Class</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -51,10 +48,10 @@
     </select>
 
     <label for="pincode">Pincode*</label>
-    <input type="text" id="pincode" name="Pincode" required>
+    <input type="text" id="pincode" name="pincode" required>
 
     <label for="mode">Mode (Offline/Online)*</label>
-    <select id="mode" name="Mode" onchange="toggleOfflineFields()" required>
+    <select id="mode" name="mode" onchange="toggleOfflineFields()" required>
       <option value="">Select Mode</option>
       <option value="Offline">Offline</option>
       <option value="Online">Online</option>
@@ -62,35 +59,54 @@
 
     <div class="offline-only conditional">
       <label for="school-name">School Name*</label>
-      <input type="text" id="school-name" name="School Name">
+      <input type="text" id="school-name" name="school_name">
 
       <label for="school-address">School Address*</label>
-      <textarea id="school-address" name="School Address"></textarea>
+      <textarea id="school-address" name="school_address"></textarea>
     </div>
 
     <label for="mobile">Mobile Number*</label>
-    <input type="tel" id="mobile" name="Mobile Number" required pattern="[0-9]{10}">
+    <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
 
     <label for="email">Email Address*</label>
-    <input type="email" id="email" name="Email Address" required>
+    <input type="email" id="email" name="email" required>
 
     <label for="gender">Gender*</label>
-    <select id="gender" name="Gender" required>
+    <select id="gender" name="gender" required>
       <option value="">Select Gender</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Other">Other</option>
+      <option value="Male">Male</option> <option value="Female">Female</option> <option value="Other">Other</option>
     </select>
 
     <label for="dob">Date of Birth*</label>
-    <input type="date" id="dob" name="Date of Birth" required>
-Pay the test fee of <strong>₹50</strong> to <strong>devrajkumar01@ybl</strong> using any UPI app (PhonePe, Google Pay, Paytm, etc.).</p>
-<p><strong>Note:</strong> Please complete the payment before submitting the form and upload the payment screenshot below.</p>
+    <input type="date" id="dob" name="dob" required>
+
     <label for="screenshot">Upload Payment Screenshot*</label>
-    <input type="file" id="screenshot" name="Payment Screenshot" accept="image/*" required>
+    <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
 
     <button type="submit">Register Now</button>
   </form>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+
+      fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Registration successful!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Error submitting form.");
+        console.error(error);
+      });
+    });
+  </script>
 
 </body>
 </html>
