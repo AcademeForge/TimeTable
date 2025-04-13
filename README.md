@@ -18,7 +18,6 @@
 
   <form id="registrationForm">
   
-
     <!-- Form Fields -->
     <label for="name">Full Name*</label>
     <input type="text" id="name" name="name" required>
@@ -41,8 +40,8 @@
     <label for="pincode">Pincode*</label>
     <input type="text" id="pincode" name="pincode" required>
 
-   <label for="mode">Mode (Offline/Online)*</label>
-    <select id="mode" name="Mode" onchange="toggleOfflineFields()" required>
+    <label for="mode">Mode (Offline/Online)*</label>
+    <select id="mode" name="mode" onchange="toggleOfflineFields()" required>
       <option value="">Select Mode</option>
       <option value="Offline">Offline</option>
       <option value="Online">Online</option>
@@ -50,12 +49,12 @@
 
     <div class="offline-only conditional">
       <label for="school-name">School Name*</label>
-      <input type="text" id="school-name" name="School Name">
+      <input type="text" id="school-name" name="school_name">
 
       <label for="school-address">School Address*</label>
-      <textarea id="school-address" name="School Address"></textarea>
+      <textarea id="school-address" name="school_address"></textarea>
     </div>
-    
+
     <label for="mobile">Mobile Number*</label>
     <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
 
@@ -71,8 +70,8 @@
     <label for="dob">Date of Birth*</label>
     <input type="date" id="dob" name="dob" required>
   <!-- Payment Info before screenshot -->
-    <label><strong>Payment Step : Pay the Test Fee</strong></label>
-    <p>Pay <strong>₹50</strong> By clicking on <strong>PAY NOW</strong> using any UPI app (PhonePe, Google Pay, etc.).</p>
+    <label><strong>Payment Step: Pay the Test Fee</strong></label>
+    <p>Pay <strong>₹50</strong> to UPI ID <strong>devrajkumar01@ybl</strong> using any UPI app (PhonePe, Google Pay, etc.).</p>
     <p><strong>Note:</strong> After payment, upload the screenshot below.</p>
 
     <!-- UPI Pay Button -->
@@ -80,6 +79,8 @@
        target="_blank">
        <button type="button">Pay ₹50 Now</button>
     </a>
+
+
     <label for="screenshot">Upload Payment Screenshot*</label>
     <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
 
