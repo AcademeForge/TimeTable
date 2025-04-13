@@ -70,8 +70,8 @@ footer {
   <nav>
     <a href="https://academeforge.github.io/AcademeForge/" target="_blank">Academeforge</a>
     <a href="https://academeforge.pages.dev/" target="_blank">Extra material</a>
-<a href="https://academeforge.pages.dev/" target="_blank">Extra material</a>
-    <a href="https://academeforge.wordpress.com/" target="_blank">About AcademeForge</a>
+<a href="https://t.me/AcademeForge/" target="_blank">Telegram</a>
+    <a href="https://academeforge.wordpress.com/" target="_blank">About AF</a>
   </nav>  <header>
     <h1>AcademeForge Scholars Test</h1>
   </header>  <iframe src="https://forms.gle/MnComSa4Sv7EJRcU6" allowfullscreen></iframe>  <footer>
