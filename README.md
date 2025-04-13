@@ -92,7 +92,7 @@
       const form = e.target;
       const formData = new FormData(form);
 
-      fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
+      fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
         method: "POST",
         body: formData
       })
