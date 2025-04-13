@@ -24,7 +24,7 @@
 
   <h2>AcademeForge Scholars Test Registration</h2>
 
-  <form action="https://formsubmit.co/your@email.com" method="POST" enctype="multipart/form-data">
+  <form action="academeforge@gmail.com" method="POST" enctype="multipart/form-data">
     <!-- Redirect after submit (optional) -->
     <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
 
