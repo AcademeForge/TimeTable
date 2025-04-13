@@ -41,44 +41,21 @@
     <label for="pincode">Pincode*</label>
     <input type="text" id="pincode" name="pincode" required>
 
-    <label for="mode">Mode (Offline/Online)*</label>
+   <label for="mode">Mode (Offline/Online)*</label>
+    <select id="mode" name="Mode" onchange="toggleOfflineFields()" required>
+      <option value="">Select Mode</option>
+      <option value="Offline">Offline</option>
+      <option value="Online">Online</option>
+    </select>
 
-<select id="mode" name="Mode"
+    <div class="offline-only conditional">
+      <label for="school-name">School Name*</label>
+      <input type="text" id="school-name" name="School Name">
 
-onchange="toggleOfflineFields()"
-
-required>
-
-<option value="">Select Mode</option>
-
-<option value="Offline">Offline</
-
-option>
-
-<option value="Online">Online</
-
-option>
-
-</select>
-
-<div class="offline-only conditional">
-
-<label for="school-name">School
-
-Name*</label>
-
-<input type="text" id="school-name"
-
-name="School Name">
-
-<label for="school-address">School
-
-Address*</label>
-
-<textarea id="school-address"
-
-name="School Address"></textarea> </div>
-
+      <label for="school-address">School Address*</label>
+      <textarea id="school-address" name="School Address"></textarea>
+    </div>
+    
     <label for="mobile">Mobile Number*</label>
     <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
 
