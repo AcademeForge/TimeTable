@@ -54,37 +54,25 @@
         };
 
         try {
-          const res = await fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
-            method: "POST",
-            body: JSON.stringify(payload),
-            headers: {
-              "Content-Type": "application/json"
-            }
-          });
+  const res = await fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" }
+  });
 
-          if (res.ok) {
-            alert("Registration submitted successfully!");
-            form.reset();
-            toggleOfflineFields(); // Reset offline fields visibility
-          } else {
-            const errorMsg = await res.text();
-            alert("Something went wrong. Please try again.\n" + errorMsg);
-          }
-        } catch (error) {
-          alert("An error occurred: " + error.message);
-        }
-      };
-
-      reader.onerror = function() {
-        alert("Error reading the file. Please try again.");
-      };
-
-      reader.readAsDataURL(fileInput);
-    }
-  </script>
-</head>
-<body>
-
+  if (res.ok) {
+    alert("Registration submitted successfully!");
+    form.reset();
+    toggleOfflineFields(); // Reset offline fields visibility
+  } else {
+    const errorMsg = await res.text();
+    console.error("Server Error:", errorMsg);
+    alert("Something went wrong. Server responded with: " + errorMsg);
+  }
+} catch (error) {
+  console.error("Network Error:", error);
+  alert("Failed to submit the form. Please check your internet connection or try again later.");
+}
   <h2>AcademeForge Scholars Test Registration</h2>
 
   <form onsubmit="handleSubmit(event)">
