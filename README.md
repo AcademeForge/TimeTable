@@ -84,7 +84,8 @@
 
     <label for="dob">Date of Birth*</label>
     <input type="date" id="dob" name="Date of Birth" required>
-
+<p><strong>Step 1:</strong> Pay the test fee of <strong>₹50</strong> to <strong>devrajkumar01@ybl</strong> using any UPI app (PhonePe, Google Pay, Paytm, etc.).</p>
+<p><strong>Note:</strong> Please complete the payment before submitting the form and upload the payment screenshot below.</p>
     <label for="screenshot">Upload Payment Screenshot*</label>
     <input type="file" id="screenshot" name="Payment Screenshot" accept="image/*" required>
 
