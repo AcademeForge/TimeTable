@@ -1,95 +1,58 @@
-
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AcademeForge Scholars Test Registration</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
-    form { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; }
-    label { display: block; margin: 10px 0 5px; }
-    input, select, textarea { width: 100%; padding: 8px; }
-    .conditional { display: none; }
-    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f7ff;
+    }header {
+  background-color: #00bfff;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+header img {
+  width: 60px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+header h1 {
+  display: inline;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+iframe {
+  display: block;
+  margin: 30px auto;
+  border: none;
+  width: 90%;
+  max-width: 800px;
+  height: 1400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background: #f0f0f0;
+  padding: 15px;
+  text-align: center;
+  color: #333;
+}
+
   </style>
-  <script>
-    function toggleOfflineFields() {
-      const mode = document.getElementById("mode").value;
-      const offlineFields = document.querySelectorAll(".offline-only");
-      offlineFields.forEach(field => {
-        field.style.display = (mode === "Offline") ? "block" : "none";
-      });
-    }
-  </script>
 </head>
 <body>
-
-  <h2>AcademeForge Scholars Test Registration</h2>
-
-  <form action="academeforge@gmail.com" method="POST" enctype="multipart/form-data">
-    <!-- Redirect after submit (optional) -->
-    <input type="hidden" name="_next" value="https://academeforge.github.io/AcademeForge/">
-
-    <!-- Disable captcha -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <label for="name">Full Name*</label>
-    <input type="text" id="name" name="Name" required>
-
-    <label for="class">Class*</label>
-    <select id="class" name="Class" required>
-      <option value="">Select Class</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-
-    <label for="pincode">Pincode*</label>
-    <input type="text" id="pincode" name="Pincode" required>
-
-    <label for="mode">Mode (Offline/Online)*</label>
-    <select id="mode" name="Mode" onchange="toggleOfflineFields()" required>
-      <option value="">Select Mode</option>
-      <option value="Offline">Offline</option>
-      <option value="Online">Online</option>
-    </select>
-
-    <div class="offline-only conditional">
-      <label for="school-name">School Name*</label>
-      <input type="text" id="school-name" name="School Name">
-
-      <label for="school-address">School Address*</label>
-      <textarea id="school-address" name="School Address"></textarea>
-    </div>
-
-    <label for="mobile">Mobile Number*</label>
-    <input type="tel" id="mobile" name="Mobile Number" required pattern="[0-9]{10}">
-
-    <label for="email">Email Address*</label>
-    <input type="email" id="email" name="Email Address" required>
-
-    <label for="gender">Gender*</label>
-    <select id="gender" name="Gender" required>
-      <option value="">Select Gender</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Other">Other</option>
-    </select>
-
-    <label for="dob">Date of Birth*</label>
-    <input type="date" id="dob" name="Date of Birth" required>
-
-    <label for="screenshot">Upload Payment Screenshot*</label>
-    <input type="file" id="screenshot" name="Payment Screenshot" accept="image/*" required>
-
-    <button type="submit">Register Now</button>
-  </form>
-
+  <header>
+    <img src="logo.png" alt="AcademeForge Logo" />
+    <h1>AcademeForge Scholars Test</h1>
+  </header>  <iframe src="https://forms.gle/MnComSa4Sv7EJRcU6" allowfullscreen></iframe>  <footer>
+    &copy; 2025 AcademeForge. All rights reserved.
+  </footer>
 </body>
 </html>
