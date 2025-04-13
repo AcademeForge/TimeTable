@@ -27,7 +27,7 @@
 
   <form action="academeforge@gmail.com" method="POST" enctype="multipart/form-data">
     <!-- Redirect after submit (optional) -->
-    <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+    <input type="hidden" name="_next" value="https://academeforge.github.io/AcademeForge/">
 
     <!-- Disable captcha -->
     <input type="hidden" name="_captcha" value="false">
