@@ -1,131 +1,95 @@
 
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AcademeForge Links</title>
+  <meta charset="UTF-8">
+  <title>AcademeForge Scholars Test Registration</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #e0f7fa, #fce4ec);
-      color: #222;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    header {
-      margin-top: 60px;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #4b0082;
-      text-align: center;
-      animation: fadeDown 1s ease-out;
-    }
-    .tagline {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #555;
-      text-align: center;
-      animation: fadeUp 1.2s ease-out;
-    }
-    .link-container {
-      margin-top: 40px;
-      width: 90%;
-      max-width: 500px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      animation: slideIn 1.3s ease-out;
-    }
-    a.button {
-      text-align: center;
-      padding: 14px 20px;
-      background: linear-gradient(135deg, #6a5acd, #00bfff);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      animation: pulse 2s infinite;
-    }
-    a.button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    }
-    footer {
-      margin-top: auto;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #888;
-      text-align: center;
-      animation: fadeIn 1.5s ease-in;
-    }.mascot {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 80px;
-  animation: float 3s ease-in-out infinite;
-  z-index: 1000;
-}
-
-@keyframes fadeDown {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-  0% { opacity: 0; transform: translateX(-100px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-  100% { transform: scale(1); }
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    form { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; }
+    label { display: block; margin: 10px 0 5px; }
+    input, select, textarea { width: 100%; padding: 8px; }
+    .conditional { display: none; }
+    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; }
   </style>
+  <script>
+    function toggleOfflineFields() {
+      const mode = document.getElementById("mode").value;
+      const offlineFields = document.querySelectorAll(".offline-only");
+      offlineFields.forEach(field => {
+        field.style.display = (mode === "Offline") ? "block" : "none";
+      });
+    }
+  </script>
 </head>
 <body>
-  <audio autoplay loop hidden>
-    <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>  <header>AcademeForge</header>
-  <div class="tagline">Empowering Students, Building Futures</div>
-  <div class="link-container">
-    <a class="button" href="http://academeforge.wordpress.com" target="_blank">WordPress Blog</a>
-    <a class="button" href="https://www.youtube.com/@AcademeForgePro" target="_blank">YouTube Channel</a>
-    <a class="button" href="https://www.instagram.com/academeforgee" target="_blank">Instagram</a>
-    <a class="button" href="https://x.com/AcademeForge?t=Q4TXzMVYC9BZDXGEICxQ5w&s=09" target="_blank">Twitter (X)</a>
-    <a class="button" href="https://t.me/addlist/CVX57k_dpG4wNGJl" target="_blank">All Telegram Groups/Channels</a>
-    <a class="button" href="https://t.me/+DYChuLLgL-83MThl" target="_blank">Main Telegram Chat Group</a>
-    <a class="button" href="https://academeforge.github.io/AcademeForge/" target="_blank">Notes Website</a>
-    <a class="button" href="https://academeforge.github.io/TimeTable/" target="_blank">Time Tables Website</a>
-    <a class="button" href="https://academeforge.github.io/AST/" target="_blank">AST Registration Form</a>
-    <a class="button" href="https://academeforge.pages.dev/" target="_blank">Extra Study Material</a>
-  </div>
-  <footer>
-    Made with love by AcademeForge Team
-  </footer>
-  
+
+  <h2>AcademeForge Scholars Test Registration</h2>
+
+  <form action="https://formsubmit.co/your@email.com" method="POST" enctype="multipart/form-data">
+    <!-- Redirect after submit (optional) -->
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
+    <!-- Disable captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <label for="name">Full Name*</label>
+    <input type="text" id="name" name="Name" required>
+
+    <label for="class">Class*</label>
+    <select id="class" name="Class" required>
+      <option value="">Select Class</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <label for="pincode">Pincode*</label>
+    <input type="text" id="pincode" name="Pincode" required>
+
+    <label for="mode">Mode (Offline/Online)*</label>
+    <select id="mode" name="Mode" onchange="toggleOfflineFields()" required>
+      <option value="">Select Mode</option>
+      <option value="Offline">Offline</option>
+      <option value="Online">Online</option>
+    </select>
+
+    <div class="offline-only conditional">
+      <label for="school-name">School Name*</label>
+      <input type="text" id="school-name" name="School Name">
+
+      <label for="school-address">School Address*</label>
+      <textarea id="school-address" name="School Address"></textarea>
+    </div>
+
+    <label for="mobile">Mobile Number*</label>
+    <input type="tel" id="mobile" name="Mobile Number" required pattern="[0-9]{10}">
+
+    <label for="email">Email Address*</label>
+    <input type="email" id="email" name="Email Address" required>
+
+    <label for="gender">Gender*</label>
+    <select id="gender" name="Gender" required>
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="dob">Date of Birth*</label>
+    <input type="date" id="dob" name="Date of Birth" required>
+
+    <label for="screenshot">Upload Payment Screenshot*</label>
+    <input type="file" id="screenshot" name="Payment Screenshot" accept="image/*" required>
+
+    <button type="submit">Register Now</button>
+  </form>
+
 </body>
+</html>
