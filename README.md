@@ -92,7 +92,7 @@
       const form = e.target;
       const formData = new FormData(form);
 
-      fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
+      fetch("https://www.appsheet.com/newshortcut/d26c27e1-53dc-4eaa-a5d6-885f95b12ae3", {
         method: "POST",
         body: formData
       })
