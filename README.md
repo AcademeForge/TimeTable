@@ -127,5 +127,5 @@
   <footer>
     Made with love by AcademeForge Team
   </footer>
-  <img class="mascot" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Mascot">
+  
 </body>
