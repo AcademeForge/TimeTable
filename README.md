@@ -1,447 +1,95 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcademeForge</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        .cta-buttons a {
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #ff6347;
-            color: white;
-            border-radius: 5px;
-        }
-        .success-stats, .testimonials {
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>AcademeForge Scholars Test Registration</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    form { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; }
+    label { display: block; margin: 10px 0 5px; }
+    input, select, textarea { width: 100%; padding: 8px; }
+    .conditional { display: none; }
+    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; }
+  </style>
+  <script>
+    function toggleOfflineFields() {
+      const mode = document.getElementById("mode").value;
+      const offlineFields = document.querySelectorAll(".offline-only");
+      offlineFields.forEach(field => {
+        field.style.display = (mode === "Offline") ? "block" : "none";
+      });
+    }
+  </script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to AcademeForge</h1>
-        <p>Your gateway to academic excellence.</p>
-    </header>
 
-    <section class="cta-buttons">
-        <a href="#join">Join Now</a>
-        <a href="#ast">Take the AST</a>
-        <a href="#courses">Explore Courses</a>
-    </section>
+  <h2>AcademeForge Scholars Test Registration</h2>
 
-    <section class="success-stats">
-        <h2>Our Achievements</h2>
-        <ul>
-            <li>Students Helped: 1,000+</li>
-            <li>Scholarships Awarded: 500+</li>
-            <li>Courses Delivered: 100+</li>
-        </ul>
-    </section>
+  <form action="academeforge@gmail.com" method="POST" enctype="multipart/form-data">
+    <!-- Redirect after submit (optional) -->
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
 
-    <section class="testimonials">
-        <h2>What Students Say</h2>
-        <p>"AcademeForge has been a game-changer for my academics!"</p>
-        <p>"The AST program helped me secure a full scholarship!"</p>
-    </section>
+    <!-- Disable captcha -->
+    <input type="hidden" name="_captcha" value="false">
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - AcademeForge</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .team-profiles img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>About Us</h1>
-        <p>Learn more about our story, mission, and team.</p>
-    </header>
+    <label for="name">Full Name*</label>
+    <input type="text" id="name" name="Name" required>
 
-    <section>
-        <h2>Our Story</h2>
-        <p>AcademeForge was founded with the vision to provide accessible and high-quality education to students worldwide. Our mission is to empower students to achieve academic excellence and secure their future.</p>
-    </section>
+    <label for="class">Class*</label>
+    <select id="class" name="Class" required>
+      <option value="">Select Class</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
 
-    <section>
-        <h2>Meet the Founders</h2>
-        <div class="team-profiles">
-            <div>
-                <img src="your-photo.jpg" alt="Your Photo">
-                <h3>You</h3>
-                <p>Your story and accomplishments.</p>
-            </div>
-            <div>
-                <img src="mandeep-photo.jpg" alt="Mandeep Boot Jolakiya">
-                <h3>Mandeep Boot Jolakiya</h3>
-                <p>Mandeep's story and accomplishments.</p>
-            </div>
-        </div>
-    </section>
+    <label for="pincode">Pincode*</label>
+    <input type="text" id="pincode" name="Pincode" required>
 
-    <section>
-        <h2>Our Team</h2>
-        <p>We are a dedicated group of educators, technologists, and mentors working together to bring innovative learning solutions to students.</p>
-    </section>
+    <label for="mode">Mode (Offline/Online)*</label>
+    <select id="mode" name="Mode" onchange="toggleOfflineFields()" required>
+      <option value="">Select Mode</option>
+      <option value="Offline">Offline</option>
+      <option value="Online">Online</option>
+    </select>
 
-    <section>
-        <h2>Mission & Values</h2>
-        <ul>
-            <li><strong>Mission:</strong> To make education accessible, engaging, and empowering.</li>
-            <li><strong>Values:</strong> Integrity, innovation, and inclusivity.</li>
-        </ul>
-    </section>
+    <div class="offline-only conditional">
+      <label for="school-name">School Name*</label>
+      <input type="text" id="school-name" name="School Name">
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - AcademeForge</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #34495e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .courses-section {
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .filters {
-            margin-bottom: 20px;
-        }
-        .filters select {
-            padding: 8px;
-            font-size: 14px;
-        }
-        .course-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Courses</h1>
-        <p>Explore our wide range of courses for Classes 9 to 12.</p>
-    </header>
+      <label for="school-address">School Address*</label>
+      <textarea id="school-address" name="School Address"></textarea>
+    </div>
 
-    <section class="courses-section">
-        <div class="filters">
-            <label for="class-filter">Filter by Class:</label>
-            <select id="class-filter">
-                <option value="all">All Classes</option>
-                <option value="9">Class 9</option>
-                <option value="10">Class 10</option>
-                <option value="11">Class 11</option>
-                <option value="12">Class 12</option>
-            </select>
-        </div>
+    <label for="mobile">Mobile Number*</label>
+    <input type="tel" id="mobile" name="Mobile Number" required pattern="[0-9]{10}">
 
-        <div class="course-card">
-            <h3>Mathematics - Class 9</h3>
-            <p><strong>Syllabus:</strong> Number systems, Polynomials, Geometry, and more.</p>
-            <p><strong>Duration:</strong> 6 months</p>
-            <p><strong>Delivery:</strong> Live and Recorded Classes</p>
-            <p><strong>Price:</strong> Free</p>
-        </div>
+    <label for="email">Email Address*</label>
+    <input type="email" id="email" name="Email Address" required>
 
-        <div class="course-card">
-            <h3>Physics - Class 10</h3>
-            <p><strong>Syllabus:</strong> Light, Electricity, Magnetism, and more.</p>
-            <p><strong>Duration:</strong> 6 months</p>
-            <p><strong>Delivery:</strong> Recorded Classes</p>
-            <p><strong>Price:</strong> ₹5,000</p>
-        </div>
-    </section>
+    <label for="gender">Gender*</label>
+    <select id="gender" name="Gender" required>
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AST - AcademeForge Scholars Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #8e44ad;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .registration-form input, .registration-form textarea, .registration-form button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>AcademeForge Scholars Test (AST)</h1>
-        <p>Your gateway to scholarships and academic recognition.</p>
-    </header>
+    <label for="dob">Date of Birth*</label>
+    <input type="date" id="dob" name="Date of Birth" required>
 
-    <section>
-        <h2>About the AST</h2>
-        <p>The AcademeForge Scholars Test (AST) is designed to identify and reward academic excellence. Students from Classes 9 to 12 are eligible to participate.</p>
-        <p><strong>Eligibility:</strong> Students of Classes 9, 10, 11, and 12.</p>
-        <p><strong>Test Format:</strong> Multiple-choice questions in subjects including Mathematics, Science, and Logical Reasoning.</p>
-    </section>
+    <label for="screenshot">Upload Payment Screenshot*</label>
+    <input type="file" id="screenshot" name="Payment Screenshot" accept="image/*" required>
 
-    <section>
-        <h2>Sample Questions</h2>
-        <p>Here are a few sample questions to help you prepare:</p>
-        <ul>
-            <li><strong>Mathematics:</strong> Solve for x: 2x + 5 = 15</li>
-            <li><strong>Science:</strong> What is the chemical formula for water?</li>
-            <li><strong>Logical Reasoning:</strong> Find the next number in the series: 2, 4, 8, 16, ...</li>
-        </ul>
-    </section>
+    <button type="submit">Register Now</button>
+  </form>
 
-    <section>
-        <h2>Scholarship Rewards</h2>
-        <p>Students scoring in the top 10 percentile will receive scholarships ranging from partial to full funding for AcademeForge courses.</p>
-    </section>
-
-    <section class="registration-form">
-        <h2>Register for AST</h2>
-        <form action="/submit-registration" method="post">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <label for="class">Class:</label>
-            <input type="text" id="class" name="class" placeholder="Enter your current class (9, 10, 11, or 12)" required>
-
-            <label for="message">Message (Optional):</label>
-            <textarea id="message" name="message" placeholder="Any additional information"></textarea>
-
-            <button type="submit">Register Now</button>
-        </form>
-    </section>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - AcademeForge</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #1abc9c;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .login-section, .dashboard {
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .login-section input, .dashboard button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 14px;
-        }
-        .dashboard ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .dashboard ul li {
-            margin: 5px 0;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Student Portal</h1>
-        <p>Access your personalized dashboard and learning materials.</p>
-    </header>
-
-    <section class="login-section">
-        <h2>Login</h2>
-        <form action="/login" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-
-            <button type="submit">Login</button>
-        </form>
-    </section>
-
-    <section class="dashboard">
-        <h2>Your Dashboard</h2>
-        <p>Welcome back, [Student Name]!</p>
-        <ul>
-            <li><strong>Progress Tracker:</strong> 70% of course completed</li>
-            <li><strong>Enrolled Courses:</strong> Mathematics, Physics</li>
-            <li><strong>Notes:</strong> Download your lecture notes here</li>
-            <li><strong>Test Results:</strong> Recent Test: 85%</li>
-        </ul>
-        <button>Access Courses</button>
-        <button>View Notes</button>
-    </section>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - AcademeForge</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #3498db;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .contact-form input, .contact-form textarea, .contact-form button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 14px;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you. Get in touch today!</p>
-    </header>
-
-    <section>
-        <h2>Contact Information</h2>
-        <p><strong>Phone:</strong> +91 98765 43210</p>
-        <p><strong>Email:</strong> contact@academeforge.com</p>
-    </section>
-
-    <section class="contact-form">
-        <h2>Send Us a Message</h2>
-        <form action="/submit-contact" method="post">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <section class="map-container">
-        <h2>Our Location</h2>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434394746!2d-122.0842493!3d37.4219999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba3e6a8b1fdf%3A0x6f5bb32d69273c88!2sGoogleplex!5e0!3m2!1sen!2sin!4v1617661397196!5m2!1sen!2sin"
-            allowfullscreen=""
-            loading="lazy"></iframe>
-    </section>
 </body>
 </html>
