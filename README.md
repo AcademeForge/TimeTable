@@ -9,7 +9,8 @@
     label { display: block; margin: 10px 0 5px; }
     input, select, textarea { width: 100%; padding: 8px; }
     .conditional { display: none; }
-    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; }
+    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
   </style>
   <script>
     function toggleOfflineFields() {
@@ -22,9 +23,16 @@
 
     async function handleSubmit(event) {
       event.preventDefault();
-      
+
       const form = event.target;
       const fileInput = document.getElementById("screenshot").files[0];
+
+      // Validation for required file upload
+      if (!fileInput) {
+        alert("Please upload a payment screenshot.");
+        return;
+      }
+
       const reader = new FileReader();
 
       reader.onload = async function() {
@@ -45,20 +53,30 @@
           mimeType: fileInput.type
         };
 
-        const res = await fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
-          method: "POST",
-          body: JSON.stringify(payload),
-          headers: {
-            "Content-Type": "application/json"
-          }
-        });
+        try {
+          const res = await fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
+            method: "POST",
+            body: JSON.stringify(payload),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          });
 
-        if (res.ok) {
-          alert("Registration submitted successfully!");
-          form.reset();
-        } else {
-          alert("Something went wrong. Please try again.");
+          if (res.ok) {
+            alert("Registration submitted successfully!");
+            form.reset();
+            toggleOfflineFields(); // Reset offline fields visibility
+          } else {
+            const errorMsg = await res.text();
+            alert("Something went wrong. Please try again.\n" + errorMsg);
+          }
+        } catch (error) {
+          alert("An error occurred: " + error.message);
         }
+      };
+
+      reader.onerror = function() {
+        alert("Error reading the file. Please try again.");
       };
 
       reader.readAsDataURL(fileInput);
