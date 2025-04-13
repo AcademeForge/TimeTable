@@ -53,26 +53,6 @@
           mimeType: fileInput.type
         };
 
-        try {
-  const res = await fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
-    method: "POST",
-    body: JSON.stringify(payload),
-    headers: { "Content-Type": "application/json" }
-  });
-
-  if (res.ok) {
-    alert("Registration submitted successfully!");
-    form.reset();
-    toggleOfflineFields(); // Reset offline fields visibility
-  } else {
-    const errorMsg = await res.text();
-    console.error("Server Error:", errorMsg);
-    alert("Something went wrong. Server responded with: " + errorMsg);
-  }
-} catch (error) {
-  console.error("Network Error:", error);
-  alert("Failed to submit the form. Please check your internet connection or try again later.");
-}
   <h2>AcademeForge Scholars Test Registration</h2>
 
   <form onsubmit="handleSubmit(event)">
@@ -136,6 +116,28 @@
 
     <button type="submit">Register Now</button>
   </form>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbySGATEopKeJGf9eQ9fg6r86-q43FAw64RFEZCX3hVCIKR5fPB0eSUemDe2upE9uhuaag/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Registration successful!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Error submitting form.");
+        console.error(error);
+      });
+    });
+  </script>
 
 </body>
 </html>
