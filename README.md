@@ -92,7 +92,7 @@
       const form = e.target;
       const formData = new FormData(form);
 
-      fetch("https://www.appsheet.com/newshortcut/d26c27e1-53dc-4eaa-a5d6-885f95b12ae3", {
+      fetch("https://script.google.com/macros/s/AKfycbySGATEopKeJGf9eQ9fg6r86-q43FAw64RFEZCX3hVCIKR5fPB0eSUemDe2upE9uhuaag/exec", {
         method: "POST",
         body: formData
       })
