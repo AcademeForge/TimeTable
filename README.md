@@ -8,7 +8,26 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #e6f7ff;
-    }header {
+    }nav {
+  background-color: #00bfff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+header {
   background-color: #00bfff;
   padding: 20px;
   color: white;
@@ -48,7 +67,11 @@ footer {
   </style>
 </head>
 <body>
-  <header>
+  <nav>
+    <a href="https://your-main-site-link.com" target="_blank">Notes</a>
+    <a href="https://your-ast-site-link.com" target="_blank">Scholars Test</a>
+    <a href="https://your-wordpress-site-link.com" target="_blank">About AcademeForge</a>
+  </nav>  <header>
     <img src="logo.png" alt="AcademeForge Logo" />
     <h1>AcademeForge Scholars Test</h1>
   </header>  <iframe src="https://forms.gle/MnComSa4Sv7EJRcU6" allowfullscreen></iframe>  <footer>
