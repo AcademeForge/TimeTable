@@ -2,99 +2,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AcademeForge Scholars Test Registration</title>
+  <title>AcademeForge Links</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #e6f7ff;
-    }nav {
-  background-color: #00bfff;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-header {
-  background-color: #00bfff;
-  padding: 20px;
-  color: white;
-  text-align: center;
-}
-
-header img {
-  width: 60px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-header h1 {
-  display: inline;
-  font-size: 24px;
-  vertical-align: middle;
-}
-
-iframe {
-  display: block;
-  margin: 30px auto;
-  border: none;
-  width: 90%;
-  max-width: 800px;
-  height: 1400px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-  background: #f0f0f0;
-  padding: 15px;
-  text-align: center;
-  color: #333;
-}
-
-.social-links {
-  margin-top: 10px;
-}
-
-.social-links a {
-  margin: 0 10px;
-  color: #00bfff;
-  text-decoration: none;
-}
-
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f8ff;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      margin-top: 60px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #4b0082;
+      text-align: center;
+    }
+    .tagline {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #555;
+      text-align: center;
+    }
+    .link-container {
+      margin-top: 40px;
+      width: 90%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    a.button {
+      text-align: center;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #6a5acd, #00bfff);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+    a.button:hover {
+      transform: scale(1.03);
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="https://academeforge.github.io/AcademeForge/" target="_blank">Notes</a>
-    <a href="https://academeforge.github.io/AST/" target="_blank">Scholars Test</a>
-    <a href="http://academeforge.wordpress.com/" target="_blank">About AcademeForge</a>
-    <a href="https://academeforge.github.io/TimeTable/" target="_blank">Time Table</a>
-    <a href="https://academeforge.pages.dev/" target="_blank">Extra Material</a>
-  </nav>  <header>
-    <img src="logo.png" alt="AcademeForge Logo" />
-    <h1>AcademeForge Scholars Test</h1>
-  </header>  <iframe src="https://forms.gle/MnComSa4Sv7EJRcU6" allowfullscreen></iframe>  <footer>
-    <div class="social-links">
-      <a href="https://www.youtube.com/@AcademeForgePro" target="_blank">YouTube</a> |
-      <a href="https://www.instagram.com/academeforgee" target="_blank">Instagram</a> |
-      <a href="https://t.me/addlist/CVX57k_dpG4wNGJl" target="_blank">Join Telegram</a> |
-      <a href="https://t.me/+DYChuLLgL-83MThl" target="_blank">Main Group</a> |
-      <a href="https://x.com/AcademeForge?t=Mb8QF2KsaChiG3ueouvrTQ&s=09" target="_blank">Twitter</a>
-    </div>
-    <p>&copy; 2025 AcademeForge. All rights reserved.</p>
+  <header>AcademeForge</header>
+  <div class="tagline">Empowering Students, Building Futures</div>
+  <div class="link-container">
+    <a class="button" href="http://academeforge.wordpress.com" target="_blank">WordPress Blog</a>
+    <a class="button" href="https://www.youtube.com/@AcademeForgePro" target="_blank">YouTube Channel</a>
+    <a class="button" href="https://www.instagram.com/academeforgee" target="_blank">Instagram</a>
+    <a class="button" href="https://x.com/AcademeForge?t=Q4TXzMVYC9BZDXGEICxQ5w&s=09" target="_blank">Twitter (X)</a>
+    <a class="button" href="https://t.me/addlist/CVX57k_dpG4wNGJl" target="_blank">All Telegram Groups/Channels</a>
+    <a class="button" href="https://t.me/+DYChuLLgL-83MThl" target="_blank">Main Telegram Chat Group</a>
+    <a class="button" href="https://academeforge.github.io/AcademeForge/" target="_blank">Notes Website</a>
+    <a class="button" href="https://academeforge.github.io/TimeTable/" target="_blank">Time Tables Website</a>
+    <a class="button" href="https://academeforge.github.io/AST/" target="_blank">AST Registration Form</a>
+    <a class="button" href="https://academeforge.pages.dev/" target="_blank">Extra Study Material</a>
+  </div>
+  <footer>
+    Made with love by AcademeForge Team
   </footer>
 </body>
