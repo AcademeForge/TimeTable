@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -64,17 +65,36 @@ footer {
   color: #333;
 }
 
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #00bfff;
+  text-decoration: none;
+}
+
   </style>
 </head>
 <body>
   <nav>
-    <a href="https://academeforge.github.io/AcademeForge/" target="_blank">Academeforge</a>
-    <a href="https://academeforge.pages.dev/" target="_blank">Extra material</a>
-<a href="https://t.me/AcademeForge/" target="_blank">Telegram</a>
-    <a href="https://academeforge.wordpress.com/" target="_blank">About AF</a>
+    <a href="https://academeforge.github.io/AcademeForge/" target="_blank">Notes</a>
+    <a href="https://academeforge.github.io/AST/" target="_blank">Scholars Test</a>
+    <a href="http://academeforge.wordpress.com/" target="_blank">About AcademeForge</a>
+    <a href="https://academeforge.github.io/TimeTable/" target="_blank">Time Table</a>
+    <a href="https://academeforge.pages.dev/" target="_blank">Extra Material</a>
   </nav>  <header>
+    <img src="logo.png" alt="AcademeForge Logo" />
     <h1>AcademeForge Scholars Test</h1>
   </header>  <iframe src="https://forms.gle/MnComSa4Sv7EJRcU6" allowfullscreen></iframe>  <footer>
-    &copy; 2025 AcademeForge. All rights reserved.
+    <div class="social-links">
+      <a href="https://www.youtube.com/@AcademeForgePro" target="_blank">YouTube</a> |
+      <a href="https://www.instagram.com/academeforgee" target="_blank">Instagram</a> |
+      <a href="https://t.me/addlist/CVX57k_dpG4wNGJl" target="_blank">Join Telegram</a> |
+      <a href="https://t.me/+DYChuLLgL-83MThl" target="_blank">Main Group</a> |
+      <a href="https://x.com/AcademeForge?t=Mb8QF2KsaChiG3ueouvrTQ&s=09" target="_blank">Twitter</a>
+    </div>
+    <p>&copy; 2025 AcademeForge. All rights reserved.</p>
   </footer>
 </body>
