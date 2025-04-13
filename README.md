@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -72,7 +72,6 @@ footer {
     <a href="https://your-ast-site-link.com" target="_blank">Scholars Test</a>
     <a href="https://your-wordpress-site-link.com" target="_blank">About AcademeForge</a>
   </nav>  <header>
-    <img src="logo.png" alt="AcademeForge Logo" />
     <h1>AcademeForge Scholars Test</h1>
   </header>  <iframe src="https://forms.gle/MnComSa4Sv7EJRcU6" allowfullscreen></iframe>  <footer>
     &copy; 2025 AcademeForge. All rights reserved.
