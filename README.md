@@ -68,9 +68,10 @@ footer {
 </head>
 <body>
   <nav>
-    <a href="https://your-main-site-link.com" target="_blank">Notes</a>
-    <a href="https://your-ast-site-link.com" target="_blank">Scholars Test</a>
-    <a href="https://your-wordpress-site-link.com" target="_blank">About AcademeForge</a>
+    <a href="https://academeforge.github.io/AcademeForge/" target="_blank">Academeforge</a>
+    <a href="https://academeforge.pages.dev/" target="_blank">Extra material</a>
+<a href="https://academeforge.pages.dev/" target="_blank">Extra material</a>
+    <a href="https://academeforge.wordpress.com/" target="_blank">About AcademeForge</a>
   </nav>  <header>
     <h1>AcademeForge Scholars Test</h1>
   </header>  <iframe src="https://forms.gle/MnComSa4Sv7EJRcU6" allowfullscreen></iframe>  <footer>
