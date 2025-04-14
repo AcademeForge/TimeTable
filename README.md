@@ -46,6 +46,7 @@
       <option value="Offline">Offline</option>
       <option value="Online">Online</option>
     </select>
+
     <label for="schoolName">School Name*</label>
 <input type="text" id="schoolName" name="schoolName" required>
 
@@ -84,14 +85,17 @@
   </form>
 
      <script>
-    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+    document.getElementById("registrationForm").addEventListener("submit",async function(e) {
       e.preventDefault();
+  const formData = { schoolName: document.getElementById("schoolName").value,
+    schoolAddress: document.getElementById("schoolAddress").value,
+  };
       const form = e.target;
       const formData = new FormData(form);
 
       fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
         method: "POST",
-        body: formData
+        body: JSON.stringify(formData),
       })
       .then(response => response.text())
       .then(result => {
