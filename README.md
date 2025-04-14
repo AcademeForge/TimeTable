@@ -111,14 +111,11 @@
 <div style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
   <h3>After Form Submission</h3>
   <p><strong>Important:</strong> Please send your <strong>payment screenshot</strong>, <strong>School Name</strong>, and <strong>School Address</strong> to our official Telegram handle:</p>
-  <a href="t.me/AcademeforgeScholarsTest_AST" target="_blank">
+  <a href="https://t.me/AcademeforgeScholarsTest_AST" target="_blank">
     <button style="background-color: #0088cc;">Send Details via Telegram</button>
   </a>
-  <p>Or you can email us at: <strong>academeforge@gmail.com</strong></p>
+  <p>Or you can email us at: href=<strong>academeforge@gmail.com</strong></p>
 </div>
-
-
-</script>
 
 </body>
 </html>
