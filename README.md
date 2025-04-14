@@ -78,45 +78,27 @@
     <button type="submit">Register Now</button>
   </form>
 
-  <script>
-    async function handleSubmit(event) {
-  event.preventDefault();
-  
-  const form = event.target;
-  const fileInput = document.getElementById("screenshot").files[0];
-  const reader = new FileReader();
+     <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
 
-  reader.onload = async function() {
-    const base64 = reader.result.split(',')[1]; // Get base64 string
-    const payload = {
-      name: form.name.value,
-      class: form.class.value,
-      schoolcode: form["school-code"].value, // Update to "school-code" in your form
-      mode: form.mode.value,
-      mobile: form.mobile.value,
-      email: form.email.value,
-      gender: form.gender.value,
-      dob: form.dob.value,
-      fileData: base64,  // Send the base64 encoded image
-      fileName: fileInput.name || "payment_screenshot.png" // Default name if none provided
-    };
-
-    const res = await fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
-      method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-Type": "application/json"
-      }
+      fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Registration successful!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Error submitting form.");
+        console.error(error);
+      });
     });
-if (res.ok) {
-      alert("Registration submitted successfully!");
-      form.reset();
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-  };
-   <script>
-  
+  </script>
 
 </body>
 </html>
