@@ -114,7 +114,7 @@
   <a href="https://t.me/AcademeforgeScholarsTest_AST" target="_blank">
     <button style="background-color: #0088cc;">Send Details via Telegram</button>
   </a>
-  <p>Or you can email us at: href=<strong>academeforge@gmail.com</strong></p>
+  <p>Or you can email us at: <strong><a href="mailto:academeforge@gmail.com">academeforge@gmail.com</a></strong></p>
 </div>
 
 </body>
