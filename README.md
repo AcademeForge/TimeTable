@@ -85,18 +85,35 @@
   </form>
 
      <script>
-    <!-- Congratulations Popup -->
+    
+<!-- Telegram Button and Instructions -->
+<div style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
+  <h3>After Form Submission</h3>
+  <p><strong>Important:</strong> Please send your <strong>payment screenshot</strong>, <strong>School Name</strong>, and <strong>School Address</strong> to our official Telegram handle:</p>
+  <a href="https://t.me/AcademeforgeScholarsTest_AST" target="_blank">
+    <button style="background-color: #0088cc;">Send Details via Telegram</button>
+  </a>
+  <p>Or you can email us at: <strong><a href="mailto:academeforge@gmail.com?subject=AST%20Registration%20Query&body=Hello%20Team%20AcademeForge,%0A%0AI%20have%20a%20query%20regarding%20the%20AcademeForge%20Scholars%20Test.%0A%0AThanks!">academeforge@gmail.com</a></strong></p>
+</div>
+
+<!-- Congratulations Popup -->
 <div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
-  <div style="background:white; padding:30px; border-radius:10px; text-align:center; max-width:500px;">
+  <div style="background:white; padding:30px; border-radius:10px; text-align:center; max-width:500px; margin:auto;">
     <h2>Congratulations!</h2>
     <p>Your application has been successfully submitted for the AcademeForge Scholars Test.</p>
+    <p>If you're a school authority, our team will visit your school soon.<br>
+       If you're an independent student, our team will call you soon.</p>
+    <p>Make sure to send your payment screenshot and school name/address on Telegram:<br>
+      <a href="https://t.me/AcademeaForgeScholarsTest_AST" target="_blank">@AcademeaForgeScholarsTest_AST</a><br>
+      or email us at: <a href="mailto:academeforge@gmail.com">academeforge@gmail.com</a></p>
+    <p>Thank you for participating in AST. Best of luck!<br>
+       With love from Team <strong>AcademeForge</strong>.</p>
     <button onclick="document.getElementById('popup').style.display='none'" style="margin-top:20px; padding:10px 20px; background:#007BFF; color:white; border:none; border-radius:5px;">Close</button>
   </div>
 </div>
 
 <script>
- 
-document.getElementById("registrationForm").addEventListener("submit", function(e) {
+  document.getElementById("registrationForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
@@ -115,17 +132,6 @@ document.getElementById("registrationForm").addEventListener("submit", function(
       console.error(error);
     });
   });
- </script>
-
-<!-- Telegram Button and Instructions -->
-<div style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
-  <h3>After Form Submission</h3>
-  <p><strong>Important:</strong> Please send your <strong>payment screenshot</strong>, <strong>School Name</strong>, and <strong>School Address</strong> to our official Telegram handle:</p>
-  <a href="https://t.me/AcademeforgeScholarsTest_AST" target="_blank">
-    <button style="background-color: #0088cc;">Send Details via Telegram</button>
-  </a>
-  <p>Or you can email us at: <strong><a href="mailto:academeforge@gmail.com?subject=AST%20Registration%20Query&body=Hello%20Team%20AcademeForge,%0A%0AI%20have%20a%20query%20regarding%20the%20AcademeForge%20Scholars%20Test.%0A%0AThanks!">academeforge@gmail.com</a></strong></p>
-</div>
-
+</script>
 </body>
 </html>
