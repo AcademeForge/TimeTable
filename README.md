@@ -95,8 +95,8 @@
 </div>
 
 <script>
-  // Replace existing fetch response code with popup call
-  document.getElementById("registrationForm").addEventListener("submit", function(e) {
+ 
+document.getElementById("registrationForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
