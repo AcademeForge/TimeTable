@@ -85,27 +85,37 @@
   </form>
 
      <script>
-    document.getElementById("registrationForm").addEventListener("submit",function(e) {
-      e.preventDefault();
-  const form = e.target;
-      const formData = new FormData(form);
+    <!-- Congratulations Popup -->
+<div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
+  <div style="background:white; padding:30px; border-radius:10px; text-align:center; max-width:500px;">
+    <h2>Congratulations!</h2>
+    <p>Your application has been successfully submitted for the AcademeForge Scholars Test.</p>
+    <button onclick="document.getElementById('popup').style.display='none'" style="margin-top:20px; padding:10px 20px; background:#007BFF; color:white; border:none; border-radius:5px;">Close</button>
+  </div>
+</div>
 
-   
-      fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
-        method: "POST",
-     body: formData})      
+<script>
+  // Replace existing fetch response code with popup call
+  document.getElementById("registrationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
 
-      .then(response => response.text())
-      .then(result => {
-        alert("Registration successful!");
-        form.reset();
-      })
-      .catch(error => {
-        alert("Error submitting form.");
-        console.error(error);
-      });
+    fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+      form.reset();
+      document.getElementById('popup').style.display = 'flex';
+    })
+    .catch(error => {
+      alert("Error submitting form.");
+      console.error(error);
     });
-  </script>
+  });
+ </script>
 
 <!-- Telegram Button and Instructions -->
 <div style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
