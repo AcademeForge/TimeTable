@@ -108,15 +108,15 @@
         "Content-Type": "application/json"
       }
     });
-
-    if (res.ok) {
+if (res.ok) {
       alert("Registration submitted successfully!");
       form.reset();
     } else {
       alert("Something went wrong. Please try again.");
     }
   };
-<script>
+   <script>
+  
 
 </body>
 </html>
