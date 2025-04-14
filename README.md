@@ -37,8 +37,8 @@
       <option value="10">10</option>
     </select>
 
-    <label for="Pincode/school">pincode/school*</label>
-<input type="text" id="pincode/school" name="pincode/school" required>
+    <label for="Pincode">pincode*</label>
+<input type="text" id="pincode" name="pincode" required>
 
     <label for="mode">Mode (Offline/Online)*</label>
     <select id="mode" name="mode" onchange="toggleOfflineFields()" required>
