@@ -107,5 +107,73 @@
     });
   </script>
 
+<!-- Telegram Button and Instructions -->
+<div style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
+  <h3>After Form Submission</h3>
+  <p><strong>Important:</strong> Please send your <strong>payment screenshot</strong>, <strong>School Name</strong>, and <strong>School Address</strong> to our official Telegram handle:</p>
+  <a href="https://t.me/AcademeaForgeScholarsTest_AST" target="_blank">
+    <button style="background-color: #0088cc;">Send Details via Telegram</button>
+  </a>
+  <p>Or you can email us at: <strong>academeforge@gmail.com</strong></p>
+</div>
+
+<!-- Captcha Checkbox with Timer -->
+<div style="margin-top: 30px;">
+  <label>
+    <input type="checkbox" id="humanCheck" disabled>
+    I am not a robot (wait 3 seconds)
+  </label>
+</div>
+
+<!-- Hidden Success Message -->
+<div id="successMessage" style="display: none; margin-top: 30px; padding: 20px; background: #d4edda; border-left: 5px solid #28a745; border-radius: 10px;">
+  <h3>Congratulations!</h3>
+  <p>You have successfully submitted the Application for <strong>AST</strong>.</p>
+  <p>If you are a <strong>school authority</strong>, our team will visit your school soon.</p>
+  <p>If you're an <strong>independent student</strong>, our team will call you soon.</p>
+  <p>Make sure to send the <strong>payment screenshot</strong> and your <strong>School Name & Address</strong> on Telegram (<a href="https://t.me/AcademeaForgeScholarsTest_AST" target="_blank">@AcademeaForgeScholarsTest_AST</a>) or via Email at <strong>academeforge@gmail.com</strong>.</p>
+  <p><strong>Thank you</strong> for participating in the AcademeForge Scholars Test. We wish you the best of luck!</p>
+  <p style="color: red; font-weight: bold;">With love ♥️ from Team AcademeForge</p>
+</div>
+
+<script>
+  // Enable checkbox after 3 seconds
+  window.onload = () => {
+    setTimeout(() => {
+      document.getElementById('humanCheck').disabled = false;
+    }, 3000);
+  };
+
+  // Update existing form submit logic to show success message
+  const originalSubmitHandler = document.getElementById("registrationForm").onsubmit;
+  document.getElementById("registrationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    // Human check
+    if (!document.getElementById('humanCheck').checked) {
+      alert("Please verify that you're not a robot.");
+      return;
+    }
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+      form.reset();
+      document.getElementById("successMessage").style.display = "block";
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    })
+    .catch(error => {
+      alert("Error submitting form.");
+      console.error(error);
+    });
+  });
+</script>
+
 </body>
 </html>
