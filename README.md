@@ -1,94 +1,104 @@
 
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>AcademeForge Scholars Test Registration</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: Arial, sans-serif; max-width: 500px; margin: auto; padding: 20px; }
-    input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; }
-    button { background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; }
-    button:hover { background-color: #45a049; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    form { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; }
+    label { display: block; margin: 10px 0 5px; }
+    input, select, textarea { width: 100%; padding: 8px; }
+    .conditional { display: none; }
+    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
   </style>
 </head>
 <body>
-  <h2>AcademeForge Scholars Test</h2>
+
+  <h2>AcademeForge Scholars Test Registration</h2>
+
   <form id="registrationForm">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="text" name="class" placeholder="Class" required>
-    <input type="text" name="pincode" placeholder="School Code" required>
     
-    <select name="mode" required>
-      <option value="">Select Mode</option>
-      <option value="Online">Online</option>
-      <option value="Offline">Offline</option>
+    <!-- Form Fields -->
+    <label for="name">Full Name*</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="class">Class*</label>
+    <select id="class" name="class" required>
+      <option value="">Select Class</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
     </select>
-    
-    <input type="text" name="schoolName" placeholder="School Name" required>
-    <textarea name="schoolAddress" placeholder="School Address" required></textarea>
-    <input type="tel" name="mobile" placeholder="Mobile Number" required>
-    <input type="email" name="email" placeholder="Email Address" required>
 
-    <p><strong>Pay Now:</strong> <br> UPI ID: <b>academeforge@okaxis</b> <br>Scan & pay using any UPI app, then upload the payment screenshot below.</p>
-    
-    <input type="file" id="screenshot" accept="image/*" required>
-    <input type="hidden" id="fileData">
-    <input type="hidden" id="fileName">
-    <input type="hidden" id="mimeType">
+    <label for="Pincode">pincode*</label>
+<input type="text" id="pincode" name="pincode" required>
 
-    <button type="submit">Submit</button>
+    <label for="mode">Mode (Offline/Online)*</label>
+    <select id="mode" name="mode" onchange="toggleOfflineFields()" required>
+      <option value="">Select Mode</option>
+      <option value="Offline">Offline</option>
+      <option value="Online">Online</option>
+    </select>
+ 
+    <label for="mobile">Mobile Number*</label>
+    <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
+
+    <label for="email">Email Address*</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="gender">Gender*</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option> <option value="Female">Female</option> <option value="Other">Other</option>
+    </select>
+
+    <label for="dob">Date of Birth*</label>
+    <input type="date" id="dob" name="dob" required>
+<!-- Payment Info before screenshot -->
+    <label><strong>Step 1: Pay the Test Fee</strong></label>
+    <p>Pay <strong>₹50</strong> to UPI ID <strong>devrajkumar01@ybl</strong> using any UPI app (PhonePe, Google Pay, etc.).</p>
+    <p><strong>Note:</strong> After payment, upload the screenshot below.</p>
+
+    <!-- UPI Pay Button -->
+    <a href="upi://pay?pa=devrajkumar01@ybl&pn=Devraj+Kumar&mc=0000&tid=1234567890&tr=1234567890&tn=Test+Payment&am=50&cu=INR" 
+       target="_blank">
+       <button type="button">Pay ₹50 Now</button>
+    </a>
+
+    <label for="screenshot">Upload Payment Screenshot*</label>
+    <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+
+    <button type="submit">Register Now</button>
   </form>
 
-  <script>
-    document.getElementById("screenshot").addEventListener("change", function () {
-      const file = this.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function () {
-          const base64String = reader.result.split(',')[1];
-          document.getElementById("fileData").value = base64String;
-          document.getElementById("fileName").value = file.name;
-          document.getElementById("mimeType").value = file.type;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-
-    document.getElementById("registrationForm").addEventListener("submit", function (e) {
+     <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
       e.preventDefault();
-
       const form = e.target;
-      const data = {
-        name: form.name.value,
-        class: form.class.value,
-        pincode: form.pincode.value,
-        mode: form.mode.value,
-        schoolName: form.schoolName.value,
-        schoolAddress: form.schoolAddress.value,
-        mobile: form.mobile.value,
-        email: form.email.value,
-        fileData: document.getElementById("fileData").value,
-        fileName: document.getElementById("fileName").value,
-        mimeType: document.getElementById("mimeType").value
-      };
+      const formData = new FormData(form);
 
       fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
+        body: formData
       })
-      .then(res => res.json())
-      .then(res => {
-        if (res.status === "success") {
-          alert("Registration successful!");
-          form.reset();
-        } else {
-          alert("Error: " + res.message);
-        }
+      .then(response => response.text())
+      .then(result => {
+        alert("Registration successful!");
+        form.reset();
       })
-      .catch(err => {
-        alert("Submission failed: " + err.message);
+      .catch(error => {
+        alert("Error submitting form.");
+        console.error(error);
       });
     });
   </script>
+
 </body>
 </html>
