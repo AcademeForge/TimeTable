@@ -46,15 +46,7 @@
       <option value="Offline">Offline</option>
       <option value="Online">Online</option>
     </select>
-
-    <div class="offline-only conditional">
-      <label for="school-name">School Name*</label>
-      <input type="text" id="school-name" name="school_name">
-
-      <label for="school-address">School Address*</label>
-      <textarea id="school-address" name="school_address"></textarea>
-    </div>
-
+ 
     <label for="mobile">Mobile Number*</label>
     <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
 
