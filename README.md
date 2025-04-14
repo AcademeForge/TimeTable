@@ -85,16 +85,18 @@
   </form>
 
      <script>
-    document.getElementById("registrationForm").addEventListener("submit",async function(e) {
+    document.getElementById("registrationForm").addEventListener("submit",function(e) {
       e.preventDefault();
-  const formData = { schoolName: document.getElementById("schoolName").value,
-    schoolAddress: document.getElementById("schoolAddress").value,
-  };
-     
+  
+   
       fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
         method: "POST",
-        body: JSON.stringify(formData),
-      })
+
+     const form = e.target;
+      const formData = new FormData(form);
+
+
+      
       .then(response => response.text())
       .then(result => {
         alert("Registration successful!");
