@@ -83,27 +83,27 @@
 
     <button type="submit">Register Now</button>
   </form>
-<script>  
-document.getElementById("registrationForm").addEventListener("submit", function(e) {  
-  e.preventDefault();  
-  const form = e.target;  
-  const formData = new FormData(form);  
+   <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
 
-  fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {  
-    method: "POST",  
-    body: formData  
-  })  
-  .then(response => response.text())  
-  .then(result => {  
-    alert("Registration successful!");  
-    form.reset();  
-  })  
-  .catch(error => {  
-    alert("Error submitting form.");  
-    console.error(error);  
-  });  
-});
-<script>
+      fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Registration successful!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Error submitting form.");
+        console.error(error);
+      });
+    });
+  </script>
     
 <!-- Telegram Button and Instructions -->
 <div style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
@@ -115,5 +115,6 @@ document.getElementById("registrationForm").addEventListener("submit", function(
 
  <p>Or you can email us at: <strong><a href="mailto:academeforge@gmail.com?subject=AST%20Registration%20Query&body=Hello%20Team%20AcademeForge,%0A%0AI%20have%20a%20query%20regarding%20the%20AcademeForge%20Scholars%20Test.%0A%0AThanks!">academeforge@gmail.com</a></strong></p>
 </div>
+
 </body>
 </html>
