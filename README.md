@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,8 +37,8 @@
       <option value="10">10</option>
     </select>
 
-    <label for="pincode">Pincode*</label>
-    <input type="text" id="pincode" name="pincode" required>
+    <label for="school-code">School Code*</label>
+<input type="text" id="school-code" name="schoolCode" required>
 
     <label for="mode">Mode (Offline/Online)*</label>
     <select id="mode" name="mode" onchange="toggleOfflineFields()" required>
