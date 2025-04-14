@@ -131,7 +131,7 @@
   <p>You have successfully submitted the Application for <strong>AST</strong>.</p>
   <p>If you are a <strong>school authority</strong>, our team will visit your school soon.</p>
   <p>If you're an <strong>independent student</strong>, our team will call you soon.</p>
-  <p>Make sure to send the <strong>payment screenshot</strong> and your <strong>School Name & Address</strong> on Telegram (<a href="https://t.me/AcademeaForgeScholarsTest_AST" target="_blank">@AcademeaForgeScholarsTest_AST</a>) or via Email at <strong>academeforge@gmail.com</strong>.</p>
+  <p>Make sure to send the <strong>payment screenshot</strong> and your <strong>School Name & Address</strong> on Telegram (<a href="https://t.me/@AcademeforgeScholarsTest_AST" target="_blank">@AcademeaforgeScholarsTest_AST</a>) or via Email at <strong>academeforge@gmail.com</strong>.</p>
   <p><strong>Thank you</strong> for participating in the AcademeForge Scholars Test. We wish you the best of luck!</p>
   <p style="color: red; font-weight: bold;">With love ♥️ from Team AcademeForge</p>
 </div>
