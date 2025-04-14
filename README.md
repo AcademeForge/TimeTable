@@ -87,16 +87,14 @@
      <script>
     document.getElementById("registrationForm").addEventListener("submit",function(e) {
       e.preventDefault();
-  
+  const form = e.target;
+      const formData = new FormData(form);
+
    
       fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
         method: "POST",
+     body: formData})      
 
-     const form = e.target;
-      const formData = new FormData(form);
-
-
-      
       .then(response => response.text())
       .then(result => {
         alert("Registration successful!");
