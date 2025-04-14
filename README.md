@@ -47,12 +47,7 @@
       <option value="Online">Online</option>
     </select>
 
-    <label for="schoolName">School Name*</label>
-<input type="text" id="schoolName" name="schoolName" required>
-
-<label for="schoolAddress">School Address*</label>
-<input type="text" id="schoolAddress" name="schoolAddress" required>
-
+    
     <label for="mobile">Mobile Number*</label>
     <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
 
@@ -79,7 +74,11 @@
     </a>
 
     <label for="screenshot">Upload Payment Screenshot*</label>
-    <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+      <p><strong>Important:</strong> Please send your <strong>payment screenshot</strong>, <strong>School Name</strong>, and <strong>School Address</strong> to our official Telegram handle:</p>
+  <a href="https://t.me/AcademeforgeScholarsTest_AST" target="_blank">
+    <button style="background-color: #0088cc;">Send Details via Telegram</button>
+  </a>
+
 
     <button type="submit">Register Now</button>
   </form>
