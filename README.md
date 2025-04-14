@@ -46,10 +46,11 @@
       <option value="Offline">Offline</option>
       <option value="Online">Online</option>
     </select>
-    <label for="school name">school name*</label>
-<input type="text" id="school name" name="school name" required>
-     <label for="school address">school address*</label>
-<input type="text" id="school address" name="school address" required>
+    <label for="schoolName">School Name*</label>
+<input type="text" id="schoolName" name="schoolName" required>
+
+<label for="schoolAddress">School Address*</label>
+<input type="text" id="schoolAddress" name="schoolAddress" required>
 
     <label for="mobile">Mobile Number*</label>
     <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
