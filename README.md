@@ -83,7 +83,27 @@
 
     <button type="submit">Register Now</button>
   </form>
+<script>  
+document.getElementById("registrationForm").addEventListener("submit", function(e) {  
+  e.preventDefault();  
+  const form = e.target;  
+  const formData = new FormData(form);  
 
+  fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {  
+    method: "POST",  
+    body: formData  
+  })  
+  .then(response => response.text())  
+  .then(result => {  
+    alert("Registration successful!");  
+    form.reset();  
+  })  
+  .catch(error => {  
+    alert("Error submitting form.");  
+    console.error(error);  
+  });  
+});
+<script>
     
 <!-- Telegram Button and Instructions -->
 <div style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
