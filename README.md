@@ -113,15 +113,7 @@ document.getElementById("registrationForm").addEventListener("submit", function(
     <button style="background-color: #0088cc;">Send Details via Telegram</button>
   </a>
 
-  Or you can email us using the button below: 
-</p>
-<a href="mailto:academeforge@gmail.com?subject=AST%20Registration%20Query&body=Hello%20Team%20AcademeForge,%0A%0AI%20have%20a%20query%20regarding%20the%20AcademeForge%20Scholars%20Test.%0A%0AThanks!" target="_blank">
-  <button style="padding: 12px 24px; background-color: skyblue; color: violetblue; border: none; border-radius: 8px; 
-               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); cursor: pointer; font-size: 16px; font-weight: bold;">
-    Email Us
-  </button>
-</a>
-</div>
+ <p>Or you can email us at: <strong><a href="mailto:academeforge@gmail.com?subject=AST%20Registration%20Query&body=Hello%20Team%20AcademeForge,%0A%0AI%20have%20a%20query%20regarding%20the%20AcademeForge%20Scholars%20Test.%0A%0AThanks!">academeforge@gmail.com</a></strong></p>
 
 </body>
 </html>
