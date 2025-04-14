@@ -37,7 +37,7 @@
       <option value="10">10</option>
     </select>
 
-    <label for="school-code">School Code*</label>
+    <label for="schoolcode">School Code*</label>
 <input type="text" id="school-code" name="schoolCode" required>
 
     <label for="mode">Mode (Offline/Online)*</label>
