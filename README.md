@@ -127,7 +127,7 @@
   </style>
 </head>
 <body class="dark-mode">
-  <h1>AcademeForge Time Table</h1>
+  <h1>AcademeForge</h1>
 
   <div class="switch-mode">
     <button onclick="toggleMode()">Switch Mode</button>
