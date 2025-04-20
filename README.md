@@ -130,7 +130,7 @@
   <h1>AcademeForge Time Table</h1>
 
   <div class="switch-mode">
-    <button onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    <button onclick="toggleMode()">Switch Mode</button>
   </div>
 
   <div class="btn-group">
