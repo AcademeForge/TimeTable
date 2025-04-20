@@ -142,7 +142,15 @@
     <!-- Table will be injected here -->
   </div>
 
-  <div class="footer">© 2025 AcademeForge. All rights reserved.</div>
+ 
+<footer>
+  <div class="social-links">
+    <a href="https://www.youtube.com/@AcademeForgePro" target="_blank">YouTube</a> |
+    <a href="https://www.instagram.com/academeforgee" target="_blank">Instagram</a> |
+    <a href="https://t.me/addlist/CVX57k_dpG4wNGJl" target="_blank">Join Telegram</a>
+  </div>
+  <p>&copy; 2025 AcademeForge. All rights reserved.</p>
+</footer>
 
   <script>
 const dummyTable = `
