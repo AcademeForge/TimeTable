@@ -111,7 +111,8 @@
       margin-top: auto;
       padding: 1rem;
       font-size: 0.9rem;
-      color: #ccc;
+      color: var(--text-color);
+}
     }
 
     @keyframes fadeInDown {
