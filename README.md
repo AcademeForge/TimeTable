@@ -7,16 +7,33 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+    :root {
+      --bg-color: #0f2027;
+      --bg-gradient: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      --text-color: #ffffff;
+      --table-text: #00b0ff;
+      --table-bg: rgba(255,255,255,0.1);
+    }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --bg-gradient: linear-gradient(120deg, #e3f2fd, #bbdefb, #90caf9);
+      --text-color: #000000;
+      --table-text: #0d47a1;
+      --table-bg: rgba(0, 0, 0, 0.05);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      transition: background 0.4s, color 0.4s;
     }
 
     body {
-      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      background: var(--bg-gradient);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -35,6 +52,7 @@
       display: flex;
       gap: 1rem;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
     button {
@@ -54,10 +72,14 @@
       transform: scale(1.05);
     }
 
+    .switch-mode {
+      margin-bottom: 2rem;
+    }
+
     .timetable {
       width: 100%;
       max-width: 800px;
-      background: rgba(255,255,255,0.1);
+      background: var(--table-bg);
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -67,6 +89,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
+      color: var(--table-text);
     }
 
     th, td {
@@ -77,6 +100,7 @@
 
     th {
       background-color: rgba(0,198,255,0.2);
+      color: var(--table-text);
     }
 
     tr:last-child td {
@@ -101,8 +125,13 @@
     }
   </style>
 </head>
-<body>
+<body class="dark-mode">
   <h1>AcademeForge Time Table</h1>
+
+  <div class="switch-mode">
+    <button onclick="toggleMode()">Toggle Dark/Light Mode</button>
+  </div>
+
   <div class="btn-group">
     <button onclick="showTimetable('dummy')">Dummy</button>
     <button onclick="showTimetable('regular')">Regular</button>
@@ -136,13 +165,17 @@
     function showTimetable(type) {
       const container = document.getElementById("timetable-container");
       container.style.animation = "none";
-      void container.offsetWidth; // Trigger reflow to restart animation
+      void container.offsetWidth;
       container.style.animation = "fadeInUp 1s ease";
 
       container.innerHTML = type === "dummy" ? dummyTable : regularTable;
     }
 
-    // Load default timetable
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    // Default timetable
     showTimetable("regular");
   </script>
 </body>
