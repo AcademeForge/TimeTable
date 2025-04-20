@@ -1,112 +1,149 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AcademeForge Scholars Test Registration</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AcademeForge Time Table</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
-    form { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; }
-    label { display: block; margin: 10px 0 5px; }
-    input, select, textarea { width: 100%; padding: 8px; }
-    .conditional { display: none; }
-    button { margin-top: 20px; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 0.6rem 1.5rem;
+      background: #00c6ff;
+      border: none;
+      border-radius: 10px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,198,255,0.4);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    button:hover {
+      background: #00acc1;
+      transform: scale(1.05);
+    }
+
+    .timetable {
+      width: 100%;
+      max-width: 800px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      animation: fadeInUp 1s ease;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    th {
+      background-color: rgba(0,198,255,0.2);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .footer {
+      margin-top: auto;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
+  <h1>AcademeForge Time Table</h1>
+  <div class="btn-group">
+    <button onclick="showTimetable('dummy')">Dummy</button>
+    <button onclick="showTimetable('regular')">Regular</button>
+  </div>
 
-  <h2>AcademeForge Scholars Test Registration</h2>
+  <div class="timetable" id="timetable-container">
+    <!-- Table will be injected here -->
+  </div>
 
-  <form id="registrationForm">
-    
-    <!-- Form Fields -->
-    <label for="name">Full Name*</label>
-    <input type="text" id="name" name="name" required>
+  <div class="footer">© 2025 AcademeForge. All rights reserved.</div>
 
-    <label for="class">Class*</label>
-    <select id="class" name="class" required>
-      <option value="">Select Class</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
+  <script>
+    const dummyTable = `
+      <table>
+        <tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
+        <tr><td>8:00 - 9:00</td><td>Maths</td><td>Science</td><td>English</td><td>GK</td><td>Activity</td></tr>
+        <tr><td>9:15 - 10:15</td><td>Drawing</td><td>Hindi</td><td>EVS</td><td>Maths</td><td>Computer</td></tr>
+        <tr><td>10:30 - 11:30</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td></tr>
+        <tr><td>11:30 - 12:30</td><td>Dance</td><td>Music</td><td>Craft</td><td>Story</td><td>Games</td></tr>
+      </table>`;
 
-    <label for="Pincode">pincode*</label>
-<input type="text" id="pincode" name="pincode" required>
+    const regularTable = `
+      <table>
+        <tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
+        <tr><td>6:30 - 7:30</td><td>Physics</td><td>Chemistry</td><td>Biology</td><td>Physics</td><td>Chemistry</td></tr>
+        <tr><td>7:45 - 8:45</td><td>Maths</td><td>English</td><td>Maths</td><td>Hindi</td><td>English</td></tr>
+        <tr><td>9:00 - 10:00</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td></tr>
+        <tr><td>10:15 - 11:15</td><td>Biology</td><td>Physics</td><td>Chemistry</td><td>Maths</td><td>Revision</td></tr>
+      </table>`;
 
-    <label for="mode">Mode (Offline/Online)*</label>
-    <select id="mode" name="mode" onchange="toggleOfflineFields()" required>
-      <option value="">Select Mode</option>
-      <option value="Offline">Offline</option>
-      <option value="Online">Online</option>
-    </select>
+    function showTimetable(type) {
+      const container = document.getElementById("timetable-container");
+      container.style.animation = "none";
+      void container.offsetWidth; // Trigger reflow to restart animation
+      container.style.animation = "fadeInUp 1s ease";
 
-    
-    <label for="mobile">Mobile Number*</label>
-    <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
+      container.innerHTML = type === "dummy" ? dummyTable : regularTable;
+    }
 
-    <label for="email">Email Address*</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="gender">Gender*</label>
-    <select id="gender" name="gender" required>
-      <option value="">Select Gender</option>
-      <option value="Male">Male</option> <option value="Female">Female</option> <option value="Other">Other</option>
-    </select>
-
-    <label for="dob">Date of Birth*</label>
-    <input type="date" id="dob" name="dob" required>
-<!-- Payment Info before screenshot -->
-    <label><strong>Step 1: Pay the Test Fee</strong></label>
-    <p>Pay <strong>₹50</strong> to UPI ID <strong>devrajkumar01@ybl</strong> using any UPI app (PhonePe, Google Pay, etc.).</p>
-    <p><strong>Note:</strong> After payment, upload the screenshot below.</p>
-
-    <!-- UPI Pay Button -->
-    <a href="upi://pay?pa=devrajkumar01@ybl&pn=Devraj+Kumar&mc=0000&tid=1234567890&tr=1234567890&tn=Test+Payment&am=50&cu=INR" 
-       target="_blank">
-       <button type="button">Pay ₹50 Now</button>
-    </a>
-    
-    <button type="submit">Register Now</button>
-  </form>
-   <script>
-    document.getElementById("registrationForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-
-      fetch("https://script.google.com/macros/s/AKfycbxKUHRKkUA8Mt42QGrYR07fDye-tcs9R6_qkCJsv8osOpyG_gus6_9Xa7AyhzNjx84SpQ/exec", {
-        method: "POST",
-        body: formData
-      })
-      .then(response => response.text())
-      .then(result => {
-        alert("Registration successful!");
-        form.reset();
-      })
-      .catch(error => {
-        alert("Error submitting form.");
-        console.error(error);
-      });
-    });
+    // Load default timetable
+    showTimetable("regular");
   </script>
-    
-<!-- Telegram Button and Instructions -->
-<div style="margin-top: 30px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
-  <h3>After Form Submission</h3>
-  <p><strong>Important:</strong> Please send your <strong>payment screenshot</strong>, <strong>School Name</strong>, and <strong>School Address</strong> to our official Telegram handle:</p>
-  <a href="https://t.me/AcademeforgeScholarsTest_AST" target="_blank">
-    <button style="background-color: #0088cc;">Send Details via Telegram</button>
-  </a>
-
- <p>Or you can email us at: <strong><a href="mailto:academeforge@gmail.com?subject=AST%20Registration%20Query&body=Hello%20Team%20AcademeForge,%0A%0AI%20have%20a%20query%20regarding%20the%20AcademeForge%20Scholars%20Test.%0A%0AThanks!">academeforge@gmail.com</a></strong></p>
-</div>
-
 </body>
 </html>
