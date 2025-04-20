@@ -144,22 +144,50 @@
   <div class="footer">© 2025 AcademeForge. All rights reserved.</div>
 
   <script>
-    const dummyTable = `
+const dummyTable = `
       <table>
-        <tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
-        <tr><td>8:00 - 9:00</td><td>Maths</td><td>Science</td><td>English</td><td>GK</td><td>Activity</td></tr>
-        <tr><td>9:15 - 10:15</td><td>Drawing</td><td>Hindi</td><td>EVS</td><td>Maths</td><td>Computer</td></tr>
-        <tr><td>10:30 - 11:30</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td></tr>
-        <tr><td>11:30 - 12:30</td><td>Dance</td><td>Music</td><td>Craft</td><td>Story</td><td>Games</td></tr>
+        <tr><th>Time</th><th>Activity / Subject</th></tr>
+        <tr><td>6:30 – 7:00 AM</td><td>Wake up & Freshen up</td></tr>
+        <tr><td>7:00 – 7:30 AM</td><td>Light Exercise / Meditation</td></tr>
+        <tr><td>7:30 – 8:00 AM</td><td>Breakfast</td></tr>
+        <tr><td>8:00 – 9:00 AM</td><td>Math (Concept + Practice)</td></tr>
+        <tr><td>9:00 – 10:00 AM</td><td>Science (Theory + Diagrams)</td></tr>
+        <tr><td>10:00 – 10:15 AM</td><td>Short Break</td></tr>
+        <tr><td>10:15 – 11:00 AM</td><td>English (Grammar + Reading)</td></tr>
+        <tr><td>11:00 – 11:45 AM</td><td>Social Science (1 Chapter)</td></tr>
+        <tr><td>11:45 – 12:30 PM</td><td>Hindi (Reading + Writing)</td></tr>
+        <tr><td>12:30 – 1:30 PM</td><td>Lunch + Rest</td></tr>
+        <tr><td>1:30 – 2:30 PM</td><td>Revision / Homework</td></tr>
+        <tr><td>2:30 – 4:00 PM</td><td>Free Time / Hobbies</td></tr>
+        <tr><td>4:00 – 5:00 PM</td><td>Doubts / Online Learning</td></tr>
+        <tr><td>5:00 – 5:30 PM</td><td>Snacks + Relaxation</td></tr>
+        <tr><td>5:30 – 6:30 PM</td><td>Mixed Practice (MCQs / PYQs)</td></tr>
+        <tr><td>6:30 – 7:30 PM</td><td>Outdoor Walk / Light Games</td></tr>
+        <tr><td>7:30 – 8:00 PM</td><td>Dinner</td></tr>
+        <tr><td>8:00 – 9:00 PM</td><td>Light Study / Revision</td></tr>
+        <tr><td>9:00 – 9:30 PM</td><td>Plan for Tomorrow / Chill</td></tr>
+        <tr><td>9:30 PM</td><td>Sleep</td></tr>
       </table>`;
 
     const regularTable = `
       <table>
-        <tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
-        <tr><td>6:30 - 7:30</td><td>Physics</td><td>Chemistry</td><td>Biology</td><td>Physics</td><td>Chemistry</td></tr>
-        <tr><td>7:45 - 8:45</td><td>Maths</td><td>English</td><td>Maths</td><td>Hindi</td><td>English</td></tr>
-        <tr><td>9:00 - 10:00</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td><td>Break</td></tr>
-        <tr><td>10:15 - 11:15</td><td>Biology</td><td>Physics</td><td>Chemistry</td><td>Maths</td><td>Revision</td></tr>
+        <tr><th>Time</th><th>Activity / Subject</th></tr>
+        <tr><td>5:00 – 5:30 AM</td><td>Wake up & Freshen up</td></tr>
+        <tr><td>5:30 – 6:00 AM</td><td>Light Exercise / Yoga</td></tr>
+        <tr><td>6:00 – 6:45 AM</td><td>Math Revision / Practice</td></tr>
+        <tr><td>6:45 – 7:15 AM</td><td>Breakfast & Get Ready</td></tr>
+        <tr><td>7:15 – 8:00 AM</td><td>Travel / Prepare for School</td></tr>
+        <tr><td>8:00 – 2:00 PM</td><td>School Time</td></tr>
+        <tr><td>2:00 – 2:30 PM</td><td>Lunch + Relax</td></tr>
+        <tr><td>2:30 – 3:30 PM</td><td>Nap / Rest Time</td></tr>
+        <tr><td>3:30 – 4:30 PM</td><td>Science or Social Homework</td></tr>
+        <tr><td>4:30 – 5:00 PM</td><td>Snacks + Chill</td></tr>
+        <tr><td>5:00 – 6:00 PM</td><td>English or Hindi Practice</td></tr>
+        <tr><td>6:00 – 7:00 PM</td><td>Doubt-solving / MCQ Practice</td></tr>
+        <tr><td>7:00 – 7:45 PM</td><td>Dinner</td></tr>
+        <tr><td>7:45 – 8:30 PM</td><td>Light Revision (any subject)</td></tr>
+        <tr><td>8:30 – 9:00 PM</td><td>Plan for next day / Relax</td></tr>
+        <tr><td>9:00 PM</td><td>Sleep</td></tr>
       </table>`;
 
     function showTimetable(type) {
@@ -180,3 +208,11 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+    
+    
